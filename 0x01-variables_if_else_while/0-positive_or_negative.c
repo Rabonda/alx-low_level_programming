@@ -3,8 +3,8 @@
 #include <time.h>
 
 /**
- *main - Starting point
- *Return: returns 0 (Success)
+ *main - assign a random number to the variable n
+ *Return: returns 0 (code success)
  */
 
 int main(void)
