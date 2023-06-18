@@ -8,11 +8,12 @@
  */
 int main(void)
 {
-	int firstNo, secondNo;
+	int firstNo =  0, secondNo;
 
-	for (firstNo = 0; firstNo <= 98; firstNo++)
+	while (firstNo <= 98)
 	{
-		for (secondNo = firstNo + 1; secondNo <= 99; secondNo++)
+		secondNo = firstNo + 1;
+		while (secondNo <= 99)
 		{
 			putchar((firstNo / 10) + '0');
 			putchar((firstNo % 10) + '0');
@@ -25,7 +26,9 @@ int main(void)
 
 			putchar(',');
 			putchar(' ');
+			secondNo++;
 		}
+	firstNo++;
 	}
 
 	putchar('\n');
