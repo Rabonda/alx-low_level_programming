@@ -22,9 +22,9 @@ int main(void)
 
 			if (firstNo == 98 && secondNo == 99)
 				continue;
-
+			
 			putchar(',');
-			putchar(' ');		
+			putchar(' ');
 		}
 		firstNo += 1;
 	}
