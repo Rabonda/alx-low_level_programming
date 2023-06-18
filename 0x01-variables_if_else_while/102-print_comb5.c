@@ -8,19 +8,19 @@
  */
 int main(void)
 {
-	int num1, num2;
+	int firstNo, secondNo;
 
-	for (num1 = 0; num1 <= 98; num1++)
+	for (firstNo = 0; firstNo <= 98; firstNo++)
 	{
-		for (num2 = num1 + 1; num2 <= 99; num2++)
+		for (secondNo = firstNo + 1; secondNo <= 99; secondNo++)
 		{
-			putchar((num1 / 10) + '0');
-			putchar((num1 % 10) + '0');
+			putchar((firstNo / 10) + '0');
+			putchar((firstNo % 10) + '0');
 			putchar(' ');
-			putchar((num2 / 10) + '0');
-			putchar((num2 % 10) + '0');
+			putchar((secondNo / 10) + '0');
+			putchar((secondNo % 10) + '0');
 
-			if (num1 == 98 && num2 == 99)
+			if (firstNo == 98 && secondNo == 99)
 				continue;
 
 			putchar(',');
