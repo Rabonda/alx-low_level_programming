@@ -15,10 +15,10 @@ int main(void)
 	while (hundred <= '9') /*increments hundreds*/
 	{
 		ten = hundred + 1;
-		for (ten <= '9') /*increments tens*/
+		while (ten <= '9') /*increments tens*/
 		{
 			one = (ten + 1);
-			for ( one <= '9') /*increments ones*/
+			while ( one <= '9') /*increments ones*/
 			{
 				putchar(hundred);
 				putchar(ten);
