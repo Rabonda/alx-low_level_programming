@@ -14,7 +14,7 @@ int main(void)
 		printf("%i", number);
 		number += 1;
 	}
-	putchar('\n');
+	printf('\n');
 
 	return (0);
 }
