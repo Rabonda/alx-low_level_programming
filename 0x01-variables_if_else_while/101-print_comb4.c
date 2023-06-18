@@ -18,7 +18,7 @@ int main(void)
 		while (ten <= '9') /*increments tens*/
 		{
 			one = (ten + 1);
-			while ( one <= '9') /*increments ones*/
+			while (one <= '9') /*increments ones*/
 			{
 				putchar(hundred);
 				putchar(ten);
