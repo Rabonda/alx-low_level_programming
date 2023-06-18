@@ -12,6 +12,7 @@ int main(void)
 	int ones;
 	int tns;
 	int ons;
+	
 	while (tens <= '9') /*displays first two digit*/
 	{
 		ones = '0';
