@@ -12,8 +12,7 @@ int main(void)
 
 	while (firstNo <= 98)
 	{
-		secondNo = firstNo + 1;
-		while(secondNo <= 99)
+		for (secondNo = firstNo + 1; secondNo <= 99; secondNo++)
 		{
 			putchar((firstNo / 10) + '0');
 			putchar((firstNo % 10) + '0');
@@ -26,7 +25,7 @@ int main(void)
 
 			putchar(',');
 			putchar(' ');
-			secondNo++;
+			
 		}
 		firstNo += 1;
 	}
