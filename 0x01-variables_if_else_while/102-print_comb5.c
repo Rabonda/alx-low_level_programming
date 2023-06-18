@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int firstNo = '0', secondNo = '0';
+	int firstNo = 0, secondNo = 0;
 
 	while (firstNo <= 98)
 	{
