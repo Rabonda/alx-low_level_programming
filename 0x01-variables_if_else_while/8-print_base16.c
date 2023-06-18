@@ -8,19 +8,19 @@
 
 int main(void)
 {
-	int n = '0';
-	int a_to_f = 'a';
+	int number = '0';
+	int a_f = 'a';
 
-	while (n <= '9') /*print 0-9*/
+	while (number <= '9') /*print numbers between 0 and 9*/
 	{
-		putchar(n);
-		n++;
+		putchar(number);
+		number++;
 	}
 
-	while (a_to_f <= 'f') /*print a-f to finish hexbase*/
+	while (a_f <= 'f') /*print a-f*/
 	{
-		putchar(a_to_f);
-		a_to_f++;
+		putchar(a_f);
+		a_f++;
 	}
 
 	putchar('\n');
