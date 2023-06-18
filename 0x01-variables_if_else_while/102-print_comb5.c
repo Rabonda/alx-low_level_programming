@@ -19,7 +19,7 @@ int main(void)
 		while (ones <= '9')
 		{
 			tns = tens;
-		 	while (tns <= '9')
+			while (tns <= '9')
 			{
 				ons = ones + 1;
 				while (ons <= '9')
@@ -46,6 +46,5 @@ int main(void)
 		tens++;
 	}
 	putchar('\n');
-	
 	return (0);
 }
