@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- *main - print 0-9 separated with commas, using putchar
- *Return: Always 0 (Success)
+ *main -  prints all possible combinations of single-digit numbers
+ *using putchar
+ *Return: returns 0 (code success)
  */
 
 int main(void)
