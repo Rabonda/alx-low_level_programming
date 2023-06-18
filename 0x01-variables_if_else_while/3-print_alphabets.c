@@ -2,7 +2,7 @@
 
 /**
  *main - prints the alphabet in lowercase, and then in uppercase
- *Return: return 0 (Success)
+ *Return: return 0 (code success)
  */
 
 int main(void)
@@ -10,7 +10,7 @@ int main(void)
 	char lowercase = 'a';
 	char uppercase = 'A';
 
-	while (lowercase <= 'z') /*print lowercase a-z*/ 
+	while (lowercase <= 'z') /*print lowercase a-z*/
 	{
 		putchar(lowercase);
 		lowercase++;
