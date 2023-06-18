@@ -11,15 +11,15 @@ int main(void)
 	int ones;
 	int tens = '0';
 
-	while (tens <= '9') /*increment tens*/
+	while (tens <= '9') /*outer loop increments tens*/
 	{
 		ones = (tens + 1);
-		while (ones <= '9') /*one's ten+1*/
+		while (ones <= '9') /*inner loop increments one's*/
 		{
 			putchar(tens);
 			putchar(ones);
 
-			if (tens != '8' || ones != '9') /*print commas*/
+			if (tens != '8' || ones != '9') /*print commas and space*/
 			{
 				putchar(',');
 				putchar(' ');
