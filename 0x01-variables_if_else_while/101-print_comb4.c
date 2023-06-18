@@ -2,20 +2,23 @@
 
 /**
  *main - print all combinations of three different digits
- *Return: Always 0 (Success)
+ *using putchar
+ *Return: returns 0 (code success)
  */
 
 int main(void)
 {
 	int one;
 	int ten;
-	int hundred;
+	int hundred = '0';
 
-	for (hundred = '0'; hundred <= '9'; hundred++) /*hundreds place*/
+	while (hundred <= '9') /*increments hundreds*/
 	{
-		for (ten = (hundred + 1); ten <= '9'; ten++) /*tens=100s+1*/
+		ten = hundred + 1;
+		for (ten <= '9') /*increments tens*/
 		{
-			for (one = (ten + 1); one <= '9'; one++) /*ones*/
+			one = (ten + 1);
+			for ( one <= '9') /*increments ones*/
 			{
 				putchar(hundred);
 				putchar(ten);
@@ -25,8 +28,11 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 				}
+				one++;
 			}
+			ten++
 		}
+		hundred++;
 	}
 	putchar('\n');
 
