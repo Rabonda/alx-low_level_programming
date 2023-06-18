@@ -19,7 +19,7 @@ int main(void)
 		while (ones <= '9')
 		{
 			tns = tens;
-		 	for ( tns <= '9')
+		 	for (tns <= '9')
 			{
 				ons = ones + 1;
 				for (ons <= '9')
