@@ -7,17 +7,20 @@
 
 int main(void)
 {
-	char alpha = 'a';
+	char letter = 'a';
 
-	while (alpha <= 'z')
+	while (letter <= 'z')
 	{
-		if ((alpha != 'q') && (alpha != 'e'))
+		if ((letter == 'e') || (letter == 'q'))
 		{
-			putchar(alpha);
+		    
 		}
-		alpha++;
+		else
+		{
+		    putchar(letter);
+		}
+		letter += 1;
 	}
 	putchar('\n');
-
 	return (0);
 }
