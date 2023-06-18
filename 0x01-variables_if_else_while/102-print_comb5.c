@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- *main - prints all possible combinations of two two-digit numbers
+ *main - combinations of two two-digit numbers
  *using putchar
- *Return: return 0 (code success)
+ *Return: returns 0 (code success)
  */
 
 int main(void)
@@ -12,14 +12,14 @@ int main(void)
 	int ones;
 	int tns;
 	int ons;
-	
-	while (tens <= '9') /*displays first two digit*/
+
+	while (tens <= '9') /*print first two digit combo*/
 	{
 		ones = '0';
 		while (ones <= '9')
 		{
 			tns = tens;
-		 	while (tns <= '9')
+		 	while (tns <= '9') /*print second of pair*/
 			{
 				ons = ones + 1;
 				while (ons <= '9')
@@ -46,6 +46,6 @@ int main(void)
 		tens++;
 	}
 	putchar('\n');
-	
+
 	return (0);
 }
