@@ -8,6 +8,7 @@
 
 int main(void)
 {
+	
 	int tens = '0';
 	int ones;
 	int tns;
