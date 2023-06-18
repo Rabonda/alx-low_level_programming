@@ -8,43 +8,27 @@
 
 int main(void)
 {
-	int tens = '0';
-	int ones;
-	int tns;
-	int ons;
+	int num1, num2;
 
-	while (tens <= '9') /*displays first two digit*/
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		ones = '0';
-		while (ones <= '9')
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			tns = tens;
-			while (tns <= '9')
-			{
-				ons = ones + 1;
-				while (ons <= '9')
-				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(tns);
-					putchar(ons);
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
+			putchar(' ');
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-					if (!((tens == '9' && ones == '8') &&
-					      (tns == '9' && ons == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					ons++;
-				}
-				ons = '0';
-				tns++;
-			}
-			ones++;
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-		tens++;
 	}
+
 	putchar('\n');
+
 	return (0);
 }
