@@ -9,11 +9,12 @@
 int main(void)
 {
 	int ones;
-	int tens;
+	int tens = '0';
 
-	for (tens = '0'; tens <= '9'; tens++) /*increment tens*/
+	while (tens <= '9') /*increment tens*/
 	{
-		for (ones = (tens + 1); ones <= '9'; ones++) /*one's ten+1*/
+		ones = (tens + 1);
+		while (ones <= '9') /*one's ten+1*/
 		{
 			putchar(tens);
 			putchar(ones);
@@ -23,7 +24,9 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+			ones++;
 		}
+		tens++;
 	}
 	putchar('\n');
 
