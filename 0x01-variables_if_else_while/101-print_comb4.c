@@ -30,7 +30,7 @@ int main(void)
 				}
 				one++;
 			}
-			ten++
+			ten++;
 		}
 		hundred++;
 	}
