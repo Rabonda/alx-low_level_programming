@@ -1,41 +1,49 @@
 #include <stdio.h>
 
 /**
- *main - print a num pair from 00-99 but no repeats (00 01, 00 02, 00 03,...)
- *Return: Always 0 (Success)
+ *main - prints all possible combinations of two two-digit numbers
+ *using putchar
+ *Return: return 0 (code success)
  */
 
 int main(void)
 {
-	int tens;
+	int tens = '0';
 	int ones;
-	int t;
-	int o;
+	int tns;
+	int ons;
 
-	for (tens = '0'; tens <= '9'; tens++) /*print first two digit combo*/
+	while (tens <= '9') /*displays first two digit*/
 	{
-		for (ones = '0'; ones <= '9'; ones++)
+		ones = '0';
+		while (ones <= '9')
 		{
-		 	for (t = tens; t <= '9'; t++) /*print second of pair*/
+			tns = tens;
+		 	for ( tns <= '9')
 			{
-				for (o = ones + 1; o <= '9'; o++)
+				ons = ones + 1;
+				for (ons <= '9')
 				{
 					putchar(tens);
 					putchar(ones);
 					putchar(' ');
-					putchar(t);
-					putchar(o);
+					putchar(tns);
+					putchar(ons);
 
 					if (!((tens == '9' && ones == '8') &&
-					      (t == '9' && o == '9')))
+					      (tns == '9' && ons == '9')))
 					{
 						putchar(',');
 						putchar(' ');
 					}
+					ons++;
 				}
-				o = '0';
+				ons = '0';
+				tns++;
 			}
+			ones++;
 		}
+		tens++;
 	}
 	putchar('\n');
 
