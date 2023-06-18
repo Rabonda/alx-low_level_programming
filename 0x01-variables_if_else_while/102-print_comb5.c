@@ -12,7 +12,7 @@ int main(void)
 	int ones;
 	int tns;
 	int ons;
-
+	
 	while (tens <= '9') /*displays first two digit*/
 	{
 		ones = '0';
@@ -46,6 +46,6 @@ int main(void)
 		tens++;
 	}
 	putchar('\n');
-
+	
 	return (0);
 }
