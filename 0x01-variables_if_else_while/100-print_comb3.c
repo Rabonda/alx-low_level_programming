@@ -1,29 +1,32 @@
 #include <stdio.h>
 
 /**
- *main - print 00 to 99 with no duplicate digits or combos: no 11, no 10 (01)
- *
- *Return: Always 0 (Success)
+ *main - prints all possible different combinations of two digits
+ *using putchar
+ *Return: returns 0 (code success)
  */
 
 int main(void)
 {
 	int ones;
-	int tens;
+	int tens = '0';
 
-	for (tens = '0'; tens <= '9'; tens++) /*increment tens*/
+	while (tens <= '9') /*outer loop increments tens*/
 	{
-		for (ones = (tens + 1); ones <= '9'; ones++) /*one's ten+1*/
+		ones = (tens + 1);
+		while (ones <= '9') /*inner loop increments one's*/
 		{
 			putchar(tens);
 			putchar(ones);
 
-			if (tens != '8' || ones != '9') /*print commas*/
+			if (tens != '8' || ones != '9') /*print commas and space*/
 			{
 				putchar(',');
 				putchar(' ');
 			}
+			ones++;
 		}
+		tens++;
 	}
 	putchar('\n');
 
