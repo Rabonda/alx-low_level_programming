@@ -3,26 +3,27 @@
 /**
  *main - prints all the numbers of base 16 in lowercase
  *using putchar
- *Return: return 0 (code success)
+ *Return: Always 0 (Success)
  */
 
 int main(void)
 {
-	int number = '0';
-	int a_f = 'a';
-	
-	while (number <= '9')
+	int n = '0';
+	int a_to_f = 'a';
+
+	while (n <= '9') /*print 0-9*/
 	{
-		putchar(number);
-		number++;
+		putchar(n);
+		n++;
 	}
-	
-	while (a_f <= 'f')
+
+	while (a_to_f <= 'f') /*print a-f to finish hexbase*/
 	{
-		putchar(a_f);
-		a_f++;
+		putchar(a_to_f);
+		a_to_f++;
 	}
+
 	putchar('\n');
-	
+
 	return (0);
 }
