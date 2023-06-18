@@ -1,15 +1,15 @@
 #include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 /**
- *main - Entry point
- *Return: Always 0 (Success)
+ *main - Starting point 
+ *Return: returns 0 (Success)
  */
 
 int main(void)
 {
-	int n;
+	int n = 0;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
