@@ -8,12 +8,12 @@
 
 int main(void)
 {
-	int firstNo = 0, secondNo;
+	int firstNo = '0', secondNo;
 
 	while (firstNo <= 98)
 	{
 		secondNo = firstNo + 1;
-		while ( secondNo <= 99)
+		while (secondNo <= 99)
 		{
 			putchar((firstNo / 10) + '0');
 			putchar((firstNo % 10) + '0');
