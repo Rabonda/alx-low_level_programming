@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- *main - print alphabet reversed using putchar
- *Return: Always 0 (Success)
+ *main - prints the lowercase alphabet in reverse
+ *using putchar
+ *Return: returns 0 (code success)
  */
 
 int main(void)
