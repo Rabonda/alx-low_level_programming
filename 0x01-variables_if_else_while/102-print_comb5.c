@@ -1,50 +1,34 @@
 #include <stdio.h>
 
 /**
- *main - combinations of two two-digit numbers
+ * main - prints all possible combinations of two two-digit numbers
  *using putchar
- *Return: returns 0 (code success)
+ * Return: return 0(code success)
  */
-
 int main(void)
 {
-	int tens = '0';
-	int ones;
-	int tns;
-	int ons;
+	int firstNo = 0;
+	int secondNo;
 
-	while (tens <= '9') /*print first two digit combo*/
+	while (firstNo <= 98)
 	{
-		ones = '0';
-		while (ones <= '9')
+		for (secondNo = firstNo + 1; secondNo <= 99; secondNo++)
 		{
-			tns = tens;
-		 	while (tns <= '9') /*print second of pair*/
-			{
-				ons = ones + 1;
-				while (ons <= '9')
-				{
-					putchar(tens);
-					putchar(ones);
-					putchar(' ');
-					putchar(tns);
-					putchar(ons);
+			putchar((firstNo / 10) + '0');
+			putchar((firstNo % 10) + '0');
+			putchar(' ');
+			putchar((secondNo / 10) + '0');
+			putchar((secondNo % 10) + '0');
 
-					if (!((tens == '9' && ones == '8') &&
-					      (tns == '9' && ons == '9')))
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					ons++;
-				}
-				ons = '0';
-				tns++;
-			}
-			ones++;
+			if (firstNo == 98 && secondNo == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-		tens++;
+		firstNo += 1;
 	}
+
 	putchar('\n');
 
 	return (0);
