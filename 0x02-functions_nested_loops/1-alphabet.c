@@ -5,7 +5,7 @@
  * followed by a new line.
  * Return: void
  */
-void print_alphabet(void)
+void print_alphabet(void) /**prints alphabet from a to z in lowercase*/
 {
 	char ch = ' ';
 
