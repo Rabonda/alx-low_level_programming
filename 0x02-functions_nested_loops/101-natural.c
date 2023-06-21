@@ -11,13 +11,13 @@ int main(void)
 	int num;
 	int add = 0;
 
-	for (num = 0; num < 1024; num++)
+	for (num = 0; num <= 1023; num++)
 	{
 		if ((num % 5) == 0 || (num % 3) == 0)
 			add += num;
 	}
 
-	printf("%d\n", num);
+	printf("%d\n", add);
 
 	return (0);
 }
