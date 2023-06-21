@@ -7,12 +7,13 @@
 int main(void)
 {
   unsigned long num_1 = 0, num_2 = 1, num_3 = 0, total = 0;
+  
   while (num_3 <= 4000000)
   {
     num_3 = num_1 + num_2;
     num_1 = num_2;
     num_2 = num_3;
-    
+
     if ((num_1 % 2) == 0)
       total += num_1;
   }
