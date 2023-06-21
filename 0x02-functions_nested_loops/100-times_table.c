@@ -19,8 +19,7 @@ void print_times_table(int n)
 
 			for (multiply = 1; multiply <= n; multiply++)
 			{
-				_putchar(',');
-				_putchar(' ');
+				_putchar(',' + ' ');
 
 				results = count * multiply;
 
