@@ -2,21 +2,22 @@
 
 /**
  * main - Lists all the natural numbers below 1024 (excluded)
- *        that are multiples of 3 or 5.
  *
- * Return: Always 0.
+ *
+ * Return: sum of all the multiples of 3 or 5
  */
 int main(void)
 {
-	int i, sum = 0;
+	int num;
+	int add = 0;
 
-	for (i = 0; i < 1024; i++)
+	for (num = 0; num <= 1023; num++)
 	{
-		if ((i % 3) == 0 || (i % 5) == 0)
-			sum += i;
+		if ((num % 5) == 0 || (num % 3) == 0)
+			add += num;
 	}
 
-	printf("%d\n", sum);
+	printf("%d\n", num);
 
 	return (0);
 }
