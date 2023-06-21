@@ -22,7 +22,7 @@ Tasks
 
 mandatory
 
-Write a program that prints `Holberton`, followed by a new line.
+Write a program that prints `_putchar`, followed by a new line.
 
 -   The program should return `0`
 
@@ -56,7 +56,7 @@ julien@ubuntu:~/0x02$ cat 1-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -94,7 +94,7 @@ julien@ubuntu:~/0x02$ cat 2-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -144,7 +144,7 @@ julien@ubuntu:~/0x02$ cat 3-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -193,7 +193,7 @@ julien@ubuntu:~/0x02$ cat 4-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -243,7 +243,7 @@ julien@ubuntu:~/0x02$ cat 5-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -307,7 +307,7 @@ julien@ubuntu:~/0x02$ cat 6-main.c
 #include <stdio.h>
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -357,7 +357,7 @@ julien@ubuntu:~/0x02$ cat 7-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -401,7 +401,7 @@ julien@ubuntu:~/0x02$ cat 8-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -461,7 +461,7 @@ julien@ubuntu:~/0x02$ cat 9-main.c
 #include "main.h"
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
@@ -519,7 +519,7 @@ julien@ubuntu:~/$ cat 10-main.c
 #include <stdio.h>
 
 /**
- * main - check the code for ALX School students.
+ * main - check the code.
  *
  * Return: Always 0.
  */
