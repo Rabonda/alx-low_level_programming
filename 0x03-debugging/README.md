@@ -88,46 +88,59 @@ carrie@ubuntu:/debugging$
 -   Directory: 0x03-debugging
 -   File: 0-main.c, main.h
 
- Done? Help Get a sandbox
-
-### 1\. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+### 1. Like, comment, subscribe
 
 mandatory
 
-Write a function that prints the alphabet, in lowercase, followed by a new line.
+Copy this main file. Comment out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.
 
--   Prototype: `void print_alphabet(void);`
--   You can only use `_putchar` twice in your code
+-   Don’t add or remove any lines of code, as we will be checking your line count. You are only allowed to comment out existing code.
+-   You do not have to compile with -Wall -Werror -Wextra -pedantic for this task.
 
 ```
-julien@ubuntu:~/0x02$ cat 1-main.c
-#include "main.h"
+carrie@ubuntu:/debugging$ cat 1-main.c
+#include <stdio.h>
 
 /**
- * main - check the code.
- *
- * Return: Always 0.
- */
+* main - causes an infinite loop
+* Return: 0
+*/
+
 int main(void)
 {
-    print_alphabet();
-    return (0);
+        int i;
+
+        printf("Infinite loop incoming :(\n");
+
+        i = 0;
+
+        while (i < 10)
+        {
+                putchar(i);
+        }
+
+        printf("Infinite loop avoided! \\o/\n");
+
+        return (0);
 }
-julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 1-main.c 1-alphabet.c -o 1-alphabet
-julien@ubuntu:~/0x02$ ./1-alphabet
-abcdefghijklmnopqrstuvwxyz
-julien@ubuntu:~/0x02$
+carrie@ubuntu:/debugging$
 
 ```
-Based on the main.c file above, create a file named 0-main.c. This file must test that the function positive_or_negative() gives the correct output when given a case of 0.
-
-You are not coding the solution / function, you’re just testing it! However, you can adapt your function from 0x01. C - Variables, if, else, while - Task #0 to compile with this main file to test locally.
-
+Your output should look like this:
+```
+carrie@ubuntu:/debugging$ gcc -std=gnu89 1-main.c -o 1-main
+carrie@ubuntu:/debugging$ ./1-main
+Infinite loop incoming :(
+Infinite loop avoided! \o/
+carrie@ubuntu:/debugging$ wc -l 1-main.c
+24 1-main.c
+carrie@ubuntu:/debugging$
+```
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x02-functions_nested_loops`
--   File: `1-alphabet.c`
+-   Directory: `0x03-debugging`
+-   File: `1-main.c`
 
  Done? Help Get a sandbox
 
