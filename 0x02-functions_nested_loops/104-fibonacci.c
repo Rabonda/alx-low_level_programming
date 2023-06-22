@@ -6,7 +6,7 @@
 */
 int main(void)
 {
-const int BILLION = 10000000000;
+const unsigned long BILLION = 10000000000;
 int count;
 unsigned long num_1 = 0, num_2 = 1, num_3;
 unsigned long num_1_h1, num_1_h2, num_2_h1, num_2_h2;
