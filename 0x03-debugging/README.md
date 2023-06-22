@@ -144,146 +144,168 @@ carrie@ubuntu:/debugging$
 
  Done? Help Get a sandbox
 
-### 2\. 10 x alphabet
+### 3. Leap year
 
 mandatory
 
-Write a function that prints 10 times the alphabet, in lowercase, followed by a new line.
-
--   Prototype: `void print_alphabet_x10(void);`
--   You can only use `_putchar` twice in your code
-
+This program converts a date to the day of year and determines how many days are left in the year, taking leap year into consideration.
 ```
-julien@ubuntu:~/0x02$ cat 2-main.c
+carrie@ubuntu:/debugging$ cat 3-main_a.c
+#include <stdio.h>
 #include "main.h"
 
 /**
- * main - check the code.
- *
- * Return: Always 0.
- */
+* main - takes a date and prints how many days are left in the year, taking
+* leap years into account
+* Return: 0
+*/
+
 int main(void)
 {
-    print_alphabet_x10();
+    int month;
+    int day;
+    int year;
+
+    month = 4;
+    day = 01;
+    year = 1997;
+
+    printf("Date: %02d/%02d/%04d\n", month, day, year);
+
+    day = convert_day(month, day);
+
+    print_remaining_days(month, day, year);
+
     return (0);
 }
-julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 2-main.c 2-print_alphabet_x10.c -o 2-alphabet_x10
-julien@ubuntu:~/0x02$ ./2-alphabet_x10
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-abcdefghijklmnopqrstuvwxyz
-julien@ubuntu:~/0x02$
 
+carrie@ubuntu:/debugging$
 ```
-
-**Repo:**
-
--   GitHub repository: `alx-low_level_programming`
--   Directory: `0x02-functions_nested_loops`
--   File: `2-print_alphabet_x10.c`
-
- Done? Help Get a sandbox
-
-### 3\. islower
-
-mandatory
-
-Write a function that checks for lowercase character.
-
--   Prototype: `int _islower(int c);`
--   Returns `1` if `c` is lowercase
--   Returns `0` otherwise
-
-FYI: The standard library provides a similar function: `islower`. Run `man islower` to learn more.
-
 ```
-julien@ubuntu:~/0x02$ cat 3-main.c
+carrie@ubuntu:/debugging$ cat 3-convert_day.c
 #include "main.h"
 
 /**
- * main - check the code.
- *
- * Return: Always 0.
- */
-int main(void)
+* convert_day - converts day of month to day of year, without accounting
+* for leap year
+* @month: month in number format
+* @day: day of month
+* Return: day of year
+*/
+
+int convert_day(int month, int day)
 {
-    int r;
-
-    r = _islower('H');
-    _putchar(r + '0');
-    r = _islower('o');
-    _putchar(r + '0');
-    r = _islower(108);
-    _putchar(r + '0');
-    _putchar('\n');
-    return (0);
+    switch (month)
+    {
+        case 2:
+            day = 31 + day;
+            break;
+        case 3:
+            day = 59 + day;
+            break;
+        case 4:
+            day = 90 + day;
+            break;
+        case 5:
+            day = 120 + day;
+            break;
+        case 6:
+            day = 151 + day;
+            break;
+        case 7:
+            day = 181 + day;
+            break;
+        case 8:
+            day = 212 + day;
+            break;
+        case 9:
+            day = 243 + day;
+            break;
+        case 10:
+            day = 273 + day;
+            break;
+        case 11:
+            day = 304 + day;
+            break;
+        case 12:
+            day = 334 + day;
+            break;
+        default:
+            break;
+    }
+    return (day);
 }
-julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 3-main.c 3-islower.c -o 3-islower
-julien@ubuntu:~/0x02$ ./3-islower
-011
-julien@ubuntu:~/0x02$
 
+carrie@ubuntu:/debugging$
 ```
-
-**Repo:**
-
--   GitHub repository: `alx-low_level_programming`
--   Directory: `0x02-functions_nested_loops`
--   File: `3-islower.c`
-
- Done? Help Get a sandbox
-
-### 4\. isalpha
-
-mandatory
-
-Write a function that checks for alphabetic character.
-
--   Prototype: `int _isalpha(int c);`
--   Returns `1` if `c` is a letter, lowercase or uppercase
--   Returns `0` otherwise
-
-FYI: The standard library provides a similar function: `isalpha`. Run `man isalpha` to learn more.
-
 ```
-julien@ubuntu:~/0x02$ cat 4-main.c
+carrie@ubuntu:/debugging$ cat 3-print_remaining_days.c
+#include <stdio.h>
 #include "main.h"
 
 /**
- * main - check the code.
- *
- * Return: Always 0.
- */
-int main(void)
+* print_remaining_days - takes a date and prints how many days are
+* left in the year, taking leap years into account
+* @month: month in number format
+* @day: day of month
+* @year: year
+* Return: void
+*/
+
+void print_remaining_days(int month, int day, int year)
 {
-    int r;
+    if ((year % 4 == 0 || year % 400 == 0) && !(year % 100 == 0))
+    {
+        if (month >= 2 && day >= 60)
+        {
+            day++;
+        }
 
-    r = _isalpha('H');
-    _putchar(r + '0');
-    r = _isalpha('o');
-    _putchar(r + '0');
-    r = _isalpha(108);
-    _putchar(r + '0');
-    r = _isalpha(';');
-    _putchar(r + '0');
-    _putchar('\n');
-    return (0);
+        printf("Day of the year: %d\n", day);
+        printf("Remaining days: %d\n", 366 - day);
+    }
+    else
+    {
+        if (month == 2 && day == 60)
+        {
+            printf("Invalid date: %02d/%02d/%04d\n", month, day - 31, year);
+        }
+        else
+        {
+            printf("Day of the year: %d\n", day);
+            printf("Remaining days: %d\n", 365 - day);
+        }
+    }
 }
-julien@ubuntu:~/0x02$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-isalpha.c -o 4-isalpha
-julien@ubuntu:~/0x02$ ./4-isalpha
-1110
-julien@ubuntu:~/0x02$
 
+carrie@ubuntu:/debugging$ 
 ```
+```
+carrie@ubuntu:/debugging$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-convert_day.c 3-print_remaining_days.c 3-main_a.c -o 3-main_a 
+carrie@ubuntu:/debugging$ ./3-main_a
+Date: 04/01/1997
+Day of the year: 91
+Remaining days: 274
+carrie@ubuntu:/debugging$
+```
+Output looks good for 04/01/1997! Let’s make a new main file 3-main_b.c to try a case that is a leap year: 02/29/2000.
+```
+carrie@ubuntu:/debugging$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 3-convert_day.c 3-print_remaining_days.c 3-main_b.c -o 3-main_b 
+carrie@ubuntu:/debugging$ ./3-main_b
+Date: 02/29/2000
+Invalid date: 02/29/2000
+carrie@ubuntu:/debugging$
+```
+? That doesn’t seem right.
 
+Fix the print_remaining_days() function so that the output works correctly for all dates and all leap years.
+
+Line count will not be checked for this task.
+You can assume that all test cases have valid months (i.e. the value of month will never be less than 1 or greater than 12) and valid days (i.e. the value of day will never be less than 1 or greater than 31).
+You can assume that all test cases have valid month/day combinations (i.e. there will never be a June 31st or November 31st, etc.), but not all month/day/year combinations are valid (i.e. February 29, 1991 or February 29, 2427).
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x02-functions_nested_loops`
+-   Directory: `0x03-debugging`
+-   File: `3-print_remaining_days.c, main.h`
+
