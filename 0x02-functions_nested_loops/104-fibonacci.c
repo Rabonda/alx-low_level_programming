@@ -1,44 +1,45 @@
 #include <stdio.h>
 /**
 *main - prints out first 98
-*fibonacci suit numbers
-*Return: return 0
+*
+*Return: return 0 (code success)
 */
 int main(void)
 {
-int inc;
-unsigned long n1 = 0, n2 = 1, n3;
-unsigned long n1_h1, n1_h2, n2_h1, n2_h2;
-unsigned long h1, h2;
+const unsigned long BILLION = 10000000000;
+int count;
+unsigned long num_1 = 0, num_2 = 1, num_3;
+unsigned long num_1_h1, num_1_h2, num_2_h1, num_2_h2;
+unsigned long h_1, h_2;
 
-for (inc = 0; inc < 92; inc++)
+for (count = 0; count < 92; count++)
 {
-n3 = n1 + n2;
-printf("%lu, ", n3);
-n1 = n2;
-n2 = n3;
+num_3 = num_1 + num_2;
+num_1 = num_2;
+num_2 = num_3;
+printf("%lu, ", num_3);
 }
-n1_h1 = n1 / 10000000000;
-n2_h1 = n2 / 10000000000;
-n1_h2 = n1 % 10000000000;
-n2_h2 = n2 % 10000000000;
-for (inc = 93; inc < 99; inc++)
+num_1_h1 = num_1 / BILLION;
+num_2_h1 = num_2 / BILLION;
+num_1_h2 = num_1 % BILLION;
+num_2_h2 = num_2 % BILLION;
+for (count = 93; count < 99; count++)
 {
-h1 = n1_h1 + n2_h1;
-h2 = n1_h2 + n2_h2;
-if ((n1_h2 + n2_h2) > 9999999999)
+h_1 = num_1_h1 + num_2_h1;
+h_2 = num_1_h2 + num_2_h2;
+if ((num_1_h2 + num_2_h2) > (BILLION - 1))
 {
-h1 += 1;
-h2 %= 10000000000;
+h_1 += 1;
+h_2 = h_2 % BILLION;
 }
-printf("%lu%lu", h1, h2);
-if (inc != 98)
+printf("%lu%lu", h_1, h_2);
+if (count != 98)
 printf(", ");
 
-n1_h1 = n2_h1;
-n1_h2 = n2_h2;
-n2_h1 = h1;
-n2_h2 = h2;
+num_1_h1 = num_2_h1;
+num_1_h2 = num_2_h2;
+num_2_h1 = h_1;
+num_2_h2 = h_2;
 }
 printf("\n");
 return (0);
