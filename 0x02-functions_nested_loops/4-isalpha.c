@@ -6,7 +6,7 @@
  *
  * Return: 0 (code success)
  */
-int _isalpha(int char)
+int _isalpha(int cha)
 {
 	if ((cha >= 'a' && cha <= 'z') || (cha >= 'A' && cha <= 'Z'))
 		return (1);
