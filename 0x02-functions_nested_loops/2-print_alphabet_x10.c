@@ -2,18 +2,18 @@
 
 /**
  * print_alphabet_x10 - print alphabet 10 times in lowercase
- * Description: print alpahebet 10 times in lowercase
- * Return: void
+ * followed by a new line.
+ * Void: prints 10 times the alphabet
  */
 void print_alphabet_x10(void)
 {
-	char ch;
-	int i;
+	char character;
+	int times_10;
 
-	for (i = 1; i <= 10; i++)
+	for (times_10 = 1; times_10 <= 10; times_10++)
 	{
-		for (ch = 'a'; ch <= 'z'; ch++)
-			_putchar(ch);
+		for (character = 'a'; character <= 'z'; character++)
+			_putchar(character);
 				_putchar('\n');
 	}
 }
