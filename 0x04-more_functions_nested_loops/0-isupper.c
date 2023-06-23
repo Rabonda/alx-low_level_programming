@@ -7,7 +7,7 @@
 
 int _isupper(int c)
 {
-if (c >= 'A' && c <= 'Z') 
+if (c >= 'A' && c <= 'Z')
 return (1);/** its upper case*/
 else
 return (0);/**its lower case or any other character*/
