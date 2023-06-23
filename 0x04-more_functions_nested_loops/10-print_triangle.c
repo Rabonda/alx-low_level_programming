@@ -10,10 +10,6 @@ void print_triangle(int size)
 
 	if (size < 1)
 	{
-		_putchar('\n');
-	}
-	else
-	{
 		for (col = 1; col <= size; col++)
 		{
 			for (row = 1; row <= size; row++)
@@ -26,9 +22,12 @@ void print_triangle(int size)
 				{
 					_putchar('#');
 				}
-
 			}
 			_putchar('\n');
 		}
+	}
+	else
+	{
+		_putchar('\n');
 	}
 }
