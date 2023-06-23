@@ -13,7 +13,7 @@ long primeNumber = 612852475143;
 int count;
 while (count < primeNumber / 2)
 {
-if (primeNumber % inc == 0)
+if (primeNumber % count == 0)
 {
 primeNumber /= 2;
 continue;
