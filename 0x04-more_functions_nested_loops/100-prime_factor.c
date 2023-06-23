@@ -9,25 +9,23 @@
 
 int main(void)
 {
-long primeNumber = 612852475143;
-int count;
-
-while (count < primeNumber / 2)
+long number = 612852475143;
+int inc;
+while (inc++ < number / 2)
 {
-if (primeNumber % count == 0)
+if (number % inc == 0)
 {
-primeNumber /= 2;
+number /= 2;
 continue;
 }
 
-for (count = 3; inc < primeNumber / 2; count += 2)
+for (inc = 3; inc < number / 2; inc += 2)
 {
-if (primeNumber % count == 0)
-primeNumber /= count;
+if (number % inc == 0)
+number /= inc;
 
 }
-count++;
 }
-printf("%ld\n", primeNumber);
+printf("%ld\n", number);
 return (0);
 }
