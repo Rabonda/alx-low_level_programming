@@ -11,7 +11,7 @@ int main(void)
 {
 long primeNumber = 612852475143;
 int increment;
-while (increment++ < primeNumber / 2)
+while (increment < primeNumber / 2)
 {
 if (primeNumber % increment == 0)
 {
@@ -24,6 +24,7 @@ for (increment = 3; increment < primeNumber / 2; increment += 2)
 if (primeNumber % increment == 0)
 primeNumber /= increment;
 }
+increment++;
 }
 printf("%ld\n", primeNumber);
 return (0);
