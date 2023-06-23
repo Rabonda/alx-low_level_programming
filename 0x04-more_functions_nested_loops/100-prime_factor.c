@@ -11,6 +11,7 @@ int main(void)
 {
 long primeNumber = 612852475143;
 int count;
+
 while (count < primeNumber / 2)
 {
 if (primeNumber % count == 0)
