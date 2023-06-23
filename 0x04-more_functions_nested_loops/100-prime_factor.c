@@ -19,7 +19,7 @@ primeNumber /= 2;
 continue;
 }
 
-for (increment = 3; inc < primeNumber / 2; increment += 2)
+for (increment = 3; increment < primeNumber / 2; increment += 2)
 {
 if (primeNumber % increment == 0)
 primeNumber /= increment;
