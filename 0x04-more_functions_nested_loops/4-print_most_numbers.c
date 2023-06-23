@@ -1,9 +1,11 @@
 #include "main.h"
 
 /**
- * print_most_numbers - print the number from 0 - 9, except 2 and 4
- *
- * Return: void
+ * print_most_numbers - function that prints the numbers from 0 to 9
+ * except 2 and 4
+ * followed by a new line.
+ * @i - integer vriable
+ * Return: void - prints numbers
  */
 void print_most_numbers(void)
 {
