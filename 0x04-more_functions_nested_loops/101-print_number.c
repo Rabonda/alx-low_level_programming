@@ -16,7 +16,7 @@ void print_number(int n)
 	}
 	base = integer / 10;
 	if (base > 0)
-		print_number(integer / 10);
+		print_number(base);
 
 	_putchar((integer % 10) + '0');
 }
