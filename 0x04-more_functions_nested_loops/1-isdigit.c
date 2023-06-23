@@ -2,7 +2,7 @@
 
 /**
  * _isdigit - function that checks for a digit (0 through 9).
- * @c: char variable 
+ * @c: char variable
  * Return: 1 if c its between 0 and 9 or 0 if its not
  */
 int _isdigit(int c)
