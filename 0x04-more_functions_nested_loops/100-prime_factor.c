@@ -10,10 +10,8 @@
 int main(void)
 {
 long primeNumber = 612852475143;
-int increment, halfPrimeNumber;
-
-halfPrimeNumber =  primeNumber / 2
-while (increment < halfPrimeNumber)
+int increment;
+while (increment < primeNumber / 2)
 {
 if (primeNumber % increment == 0)
 {
@@ -21,7 +19,7 @@ primeNumber /= 2;
 continue;
 }
 
-for (increment = 3; increment < halfPrimeNumber; increment += 2)
+for (increment = 3; increment < primeNumber / 2; increment += 2)
 {
 if (primeNumber % increment == 0)
 primeNumber /= increment;
