@@ -1,21 +1,21 @@
 #include "main.h"
 
 /**
- * more_numbers - print number 0 - 14, 10 times
- *
- * Return: void
+ * more_numbers -  function that prints 10 times the numbers from 0 to 14
+ * followed by a new line.
+ * Return: void - display numbers from 0 to 14, 10 times
  */
 void more_numbers(void)
 {
-	int i, j;
+	int col, row;
 
-	for (i = 1; i <= 10; i++)
+	for (row = 1; row <= 10; row++)
 	{
-		for (j = 0; j <= 14; j++)
+		for (col = 0; col <= 14; col++)
 		{
-			if (j >= 10)
+			if (col >= 10)
 				_putchar('0' + 1);
-			_putchar('0' + (j % 10));
+			_putchar('0' + (col % 10));
 		}
 		_putchar('\n');
 	}
