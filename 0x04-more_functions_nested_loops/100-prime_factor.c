@@ -15,16 +15,16 @@ while (increment < primeNumber / 2)
 {
 if (primeNumber % increment == 0)
 {
-primeNumber /= 2;
+primeNumber = primeNumber / 2;
 continue;
 }
 
 for (increment = 3; increment < primeNumber / 2; increment += 2)
 {
 if (primeNumber % increment == 0)
-primeNumber /= increment;
+primeNumber = primeNumber / increment;
 }
-increment++;
+increment = increment + 1;
 }
 printf("%ld\n", primeNumber);
 return (0);
