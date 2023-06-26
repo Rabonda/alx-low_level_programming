@@ -9,7 +9,7 @@
 
 void _puts(char *str)
 {
-	char strin[10] = *str;
+	char strin = *str;
 	int x = 0;
 	
 	while (x < 10)
