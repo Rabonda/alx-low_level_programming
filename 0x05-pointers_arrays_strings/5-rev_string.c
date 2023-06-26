@@ -1,25 +1,6 @@
 #include "main.h"
 
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: length
- */
-
-int _strlen(char *s)
-{
-	int len = 0;
-
-	while (*s != '\0')
-	{
-		len++;
-		s++;
-	}
-
-	return (len);
-}
-
-/**
  * rev_string - reverses a string
  * @s: string to reverse
  */
@@ -27,9 +8,18 @@ int _strlen(char *s)
 void rev_string(char *s)
 {
 	int i = 0;
-	int j = (_strlen(s) - 1);
+	int j;
 	char tmp;
+	int len = 0;
 
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	s = 0;
+	j = len - 1;
+	
 	while (i < j)
 	{
 		tmp = s[i];
