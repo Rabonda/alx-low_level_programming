@@ -9,8 +9,7 @@ void print_array(int *a, int n)
 {
 	int index;
 
-	index = 0;
-	while (index < n)
+	for (index = 0; index < n; index++)
 	{
 		printf("%d", a[index]);
 
@@ -18,8 +17,7 @@ void print_array(int *a, int n)
 			continue;
 
 		printf(", ");
-		index += 1;
 	}
 
-	printf("\n");
+	printf("\n")
 }
