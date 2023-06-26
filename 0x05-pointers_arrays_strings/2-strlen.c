@@ -13,6 +13,7 @@ int _strlen(char *s)
 	for (stringLength = 0; *s != '\0'; stringLength++)
 	{
 		stringLength++;
+		s++;
 	}
 
 	return (stringLength);
