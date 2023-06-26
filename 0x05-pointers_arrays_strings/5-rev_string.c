@@ -31,11 +31,12 @@ void rev_string(char *s)
 
 	i = len - 1;
 
-	while (i < j)
+	while (i >= len / 2)
 	{
+		j = len - i - 1;
 		tmp = s[i];
 		s[i] = s[j];
 		s[j] = tmp;
-		i++, j--;
+		i--;
 	}
 }
