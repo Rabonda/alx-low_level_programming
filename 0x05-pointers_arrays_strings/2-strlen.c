@@ -11,9 +11,7 @@ int _strlen(char *s)
 	int stringLength;
 
 	for (stringLength = 0; *s != '\0'; stringLength++)
-	{
 		s++;
-	}
 
 	return (stringLength);
 }
