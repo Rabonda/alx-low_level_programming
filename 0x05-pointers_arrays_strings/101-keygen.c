@@ -18,7 +18,8 @@ int main(void)
 	while (add < 2772)
 	{
 		keyGen[index] = 33 + rand() % 94;
-		add += keyGen[index++];
+		add = add + keyGen[index];
+		index++;
 	}
 
 	keyGen[index] = '\0';
