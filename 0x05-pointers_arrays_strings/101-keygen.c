@@ -40,11 +40,11 @@ int main(void)
 				break;
 			}
 		}
-		for (index = 0; password[index]; index++)
+		for (index = 0; keyGen[index]; index++)
 		{
-			if (password[index] >= (33 + halfDifference2))
+			if (keyGen[index] >= (33 + halfDifference2))
 			{
-				password[index] -= halfDifference2;
+				keyGen[index] -= halfDifference2;
 				break;
 			}
 		}
