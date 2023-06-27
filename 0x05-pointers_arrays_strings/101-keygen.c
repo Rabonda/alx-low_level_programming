@@ -11,7 +11,8 @@
 int main(void)
 {
 	char keyGen[84];
-	int index = 0, add = 0, twice = 0, halfDifference1, halfDifference2;
+	int index = 0, add = 0, twice = 0, halfDifference1;
+	int halfDifference2;
 
 	srand(time(0));
 
