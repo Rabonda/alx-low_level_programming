@@ -15,7 +15,7 @@ int main(void)
 
 	srand(time(0));
 
-	while (sum < 2772)
+	while (add < 2772)
 	{
 		keyGen[index] = 33 + rand() % 94;
 		add += keyGen[index++];
