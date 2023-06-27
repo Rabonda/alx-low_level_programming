@@ -11,7 +11,7 @@
 int main(void)
 {
 	char keyGen[84];
-	int index = 0, add = 0, halfDifference1, halfDifference2;
+	int index = 0, add = 0, twice = 0, halfDifference1, halfDifference2;
 
 	srand(time(0));
 
@@ -31,21 +31,17 @@ int main(void)
 		if ((add - 2772) % 2 != 0)
 			halfDifference1++;
 
-		for (index = 0; keyGen[index]; index++)
+		while (twice <2)
 		{
-			if (keyGen[index] >= (33 + halfDifference1))
+			for (index = 0; keyGen[index]; index++)
 			{
-				keyGen[index] -= halfDifference1;
-				break;
+				if (keyGen[index] >= (33 + halfDifference1))
+				{
+					keyGen[index] -= halfDifference1;
+					break;
+				}
 			}
-		}
-		for (index = 0; keyGen[index]; index++)
-		{
-			if (keyGen[index] >= (33 + halfDifference2))
-			{
-				keyGen[index] -= halfDifference2;
-				break;
-			}
+			twice++;
 		}
 	}
 
