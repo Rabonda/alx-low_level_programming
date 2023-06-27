@@ -32,17 +32,21 @@ int main(void)
 		if ((add - 2772) % 2 != 0)
 			halfDifference1++;
 
-		while (twice <2)
+		for (index = 0; keyGen[index]; index++)
 		{
-			for (index = 0; keyGen[index]; index++)
+			if (keyGen[index] >= (33 + halfDifference1))
 			{
-				if (keyGen[index] >= (33 + halfDifference1))
+				keyGen[index] -= halfDifference1;
+				break;
+			}
+			for (index = 0; password[index]; index++)
+			{
+				if (password[index] >= (33 + diff_half2))
 				{
-					keyGen[index] -= halfDifference1;
+					password[index] -= diff_half2;
 					break;
 				}
 			}
-			twice++;
 		}
 	}
 
