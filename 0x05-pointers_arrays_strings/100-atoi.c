@@ -12,7 +12,7 @@ int _atoi(char *s)
 	unsigned int number = 0;
 
 	do {
-		if (*s >= '0' && *s <= '9')
+		if (*s >= '0' && *s < '10')
 			number = (number * 10) + (*s - '0');
 		else if (*s == '-')
 			positveNegativeSign *= -1;
