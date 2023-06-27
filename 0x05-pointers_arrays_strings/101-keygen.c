@@ -10,45 +10,45 @@
  */
 int main(void)
 {
-	char password[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+	char keyGen[84];
+	int index = 0, add = 0, diff_half1, diff_half2;
 
 	srand(time(0));
 
 	while (sum < 2772)
 	{
-		password[index] = 33 + rand() % 94;
-		sum += password[index++];
+		keyGen[index] = 33 + rand() % 94;
+		add += keyGen[index++];
 	}
 
-	password[index] = '\0';
+	keyGen[index] = '\0';
 
-	if (sum != 2772)
+	if (add != 2772)
 	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2772) / 2;
-		if ((sum - 2772) % 2 != 0)
+		diff_half1 = (add - 2772) / 2;
+		diff_half2 = (add - 2772) / 2;
+		if ((add - 2772) % 2 != 0)
 			diff_half1++;
 
-		for (index = 0; password[index]; index++)
+		for (index = 0; keyGen[index]; index++)
 		{
-			if (password[index] >= (33 + diff_half1))
+			if (keyGen[index] >= (33 + diff_half1))
 			{
-				password[index] -= diff_half1;
+				keyGen[index] -= diff_half1;
 				break;
 			}
 		}
-		for (index = 0; password[index]; index++)
+		for (index = 0; keyGen[index]; index++)
 		{
-			if (password[index] >= (33 + diff_half2))
+			if (keyGen[index] >= (33 + diff_half2))
 			{
-				password[index] -= diff_half2;
+				keyGen[index] -= diff_half2;
 				break;
 			}
 		}
 	}
 
-	printf("%s", password);
+	printf("%s", keyGen);
 
 	return (0);
 }
