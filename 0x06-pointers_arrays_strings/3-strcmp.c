@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdbool.h>
 
 /**
  * _strcmp - Compares pointers to two strings.
@@ -15,8 +14,7 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	bool compare = *s1 && *s2 && *s1 == *s2;
-	while (compare)
+	while (*s1 && *s2 && *s1 == *s2)
 	{
 		s1++;
 		s2++;
