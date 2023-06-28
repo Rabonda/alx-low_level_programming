@@ -14,12 +14,12 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	bool compare = *s1 && *s2 && *s1 == *s2;
+	*s1 && *s2 && *s1 == *s2;
 
 	while (compare)
 	{
-		s1++;
-		s2++;
+		s1 += 1;
+		s2 += 1;
 	}
 
 	return (*s1 - *s2);
