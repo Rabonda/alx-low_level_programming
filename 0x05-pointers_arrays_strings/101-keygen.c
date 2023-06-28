@@ -3,16 +3,15 @@
 #include <time.h>
 
 /**
- * main - Generates random valid passwords for the
- *        program 101-crackme.
- *
- * Return: Always 0.
+ * main - a program that generates random valid passwords
+ * for the program 101-crackme.
+ * Return: generates random valid passwords
  */
 int main(void)
 {
 	char keyGen[84];
 	int index = 0, add = 0, twice = 0, halfDifference1;
-	int halfDifference2;
+	int halfDifference2, diff;
 
 	srand(time(0));
 
@@ -27,9 +26,10 @@ int main(void)
 
 	if (add != 2772)
 	{
-		halfDifference1 = (add - 2772) / 2;
-		halfDifference2 = (add - 2772) / 2;
-		if ((add - 2772) % 2 != 0)
+		diff = add -2772;
+		halfDifference1 = diff / 2;
+		halfDifference2 = diff / 2;
+		if (diff % 2 != 0)
 			halfDifference1++;
 
 		for (index = 0; keyGen[index]; index++)
