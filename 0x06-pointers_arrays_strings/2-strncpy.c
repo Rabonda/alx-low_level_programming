@@ -10,16 +10,16 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int index = 0, src_len = 0;
+	int destIndex = 0, srcLength = 0;
 
-	while (src[index++])
-		src_len++;
+	while (src[destIndex++])
+		srcLength++;
 
-	for (index = 0; src[index] && index < n; index++)
-		dest[index] = src[index];
+	for (index = 0; src[destIndex] && destIndex < n; destIndex++)
+		dest[destIndex] = src[destIndex];
 
-	for (index = src_len; index < n; index++)
-		dest[index] = '\0';
+	for (destIndex = srcLength; destIndex < n; destIndex++)
+		dest[destIndex] = '\0';
 
 	return (dest);
 }
