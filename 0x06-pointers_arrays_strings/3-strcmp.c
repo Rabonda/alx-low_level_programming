@@ -14,7 +14,9 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+	bool compare = *s1 && *s2 && *s1 == *s2;
+
+	while (compare)
 	{
 		s1++;
 		s2++;
