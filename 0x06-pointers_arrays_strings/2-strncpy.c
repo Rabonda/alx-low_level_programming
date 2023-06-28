@@ -22,8 +22,12 @@ char *_strncpy(char *dest, char *src, int n)
 		destIndex++;
 	}
 
-	for (destIndex = srcLength; destIndex < n; destIndex++)
+	destIndex = srcLength;
+	while (destIndex < n)
+	{
 		dest[destIndex] = '\0';
+		destIndex++
+	}
 
 	return (dest);
 }
