@@ -3,52 +3,54 @@
 #include <time.h>
 
 /**
- * main - Generates random valid passwords for the
- *        program 101-crackme.
- *
- * Return: Always 0.
+ * main - a program that generates random valid passwords
+ * for the program 101-crackme.
+ * Return: generates random valid passwords
  */
 int main(void)
 {
-	char password[84];
-	int index = 0, sum = 0, diff_half1, diff_half2;
+	char keyGen[84];
+	int index = 0, add = 0, halfDifference1;
+	int halfDifference2, diff;
 
 	srand(time(0));
 
-	while (sum < 2772)
+	while (add < 2772)
 	{
-		password[index] = 33 + rand() % 94;
-		sum += password[index++];
+		keyGen[index] = 33 + rand() % 94;
+		add = add + keyGen[index];
+		index++;
 	}
 
-	password[index] = '\0';
+	keyGen[index] = '\0';
 
-	if (sum != 2772)
+	if (add != 2772)
 	{
-		diff_half1 = (sum - 2772) / 2;
-		diff_half2 = (sum - 2772) / 2;
-		if ((sum - 2772) % 2 != 0)
-			diff_half1++;
+		diff = add -2772;
+		halfDifference1 = diff / 2;
+		halfDifference2 = diff / 2;
+		if (diff % 2 != 0)
+			halfDifference1++;
 
-		for (index = 0; password[index]; index++)
+		for (index = 0; keyGen[index]; index++)
 		{
-			if (password[index] >= (33 + diff_half1))
+			if (keyGen[index] >= (33 + halfDifference1))
 			{
-				password[index] -= diff_half1;
+				keyGen[index] -= halfDifference1;
 				break;
 			}
 		}
-		for (index = 0; password[index]; index++)
+		for (index = 0; keyGen[index]; index++)
 		{
-			if (password[index] >= (33 + diff_half2))
+			if (keyGen[index] >= (33 + halfDifference2))
 			{
-				password[index] -= diff_half2;
+				keyGen[index] -= halfDifference2;
 				break;
 			}
 		}
 	}
 
-	printf("%s", password);
+	printf("%s", keyGen);
 
 	return (0);
 }
