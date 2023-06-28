@@ -10,7 +10,7 @@
 int main(void)
 {
 	char keyGen[84];
-	int index = 0, add = 0, twice = 0, halfDifference1;
+	int index = 0, add = 0, halfDifference1;
 	int halfDifference2, diff;
 
 	srand(time(0));
