@@ -8,17 +8,16 @@ int main(void)
 
   a[2] = 1024;
   p = &n;
-  /**
- * main - the program prints a[2] = 98, followed by a new line.
- * @a: array variable
- * @p: pointer variable
- * @n: The number of array.
- * Return: 0 (code success)
- *
- */
+  /*
+   * write your line of code here...
+   * Remember:
+   * - you are not allowed to use a
+   * - you are not allowed to modify p
+   * - only one statement
+   * - you are not allowed to code anything else than this line of code
+   */
   *(p + 5) = 98;
-/* this prints 98 */
+  /* ...so that this prints 98\n */
   printf("a[2] = %d\n", a[2]);
-  printf("\n");
   return (0);
 }
