@@ -7,6 +7,8 @@
 Tasks :page_with_curl:
 -----
 
+#include "main.h"
+
 ### 0\. strcat
 
 mandatory
