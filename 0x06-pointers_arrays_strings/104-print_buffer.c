@@ -13,7 +13,7 @@ void print_buffer(char *b, int size)
 {
 	int byte_hex, byte_index;
 
-	for (byte_hex = 0; byte_hex < size; byte_hex += 10;)
+	for (byte_hex = 0; byte_hex < size; byte_hex += 10)
 	{
 		printf("%08x: ", byte_hex);
 
