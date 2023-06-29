@@ -49,6 +49,7 @@ void print_buffer(char *b, int size)
 		printf("\n");
 		byte_hex += 10;
 	}
+<<<<<<< HEAD
 
 	if (size <= 0)
 		printf("\n");
@@ -105,3 +106,9 @@ void print_buffer(char *b, int size)
 
 
 
+=======
+
+	if (size <= 0)
+		printf("\n");
+}
+>>>>>>> 62fa98086e6c65c697589575431d51199ffd5502
