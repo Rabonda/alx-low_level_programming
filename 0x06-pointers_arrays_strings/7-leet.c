@@ -24,6 +24,5 @@ char *leet(char *str)
 		}
 		str_index_1++;
 	}
-
 	return (str);
 }
