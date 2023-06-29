@@ -45,7 +45,6 @@ void print_buffer(char *b, int size)
 				printf(".");
 			byte_index++;
 		}
-
 		if (byte_hex >= size)
 			continue;
 
