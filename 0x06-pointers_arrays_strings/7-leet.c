@@ -21,7 +21,6 @@ char *leet(char *str)
 				str[str_index_1] = str_index_2 + '0';
 			str_index_2++;
 		}
-
 		str_index_1++;
 	}
 
