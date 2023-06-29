@@ -14,37 +14,37 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r);
  */
 char *add_strings(char *n1, char *n2, char *r, int r_index)
 {
-	int number, divide_10;
+	int num, tens = 0;
 
 	for (; *n1 && *n2; n1--, n2--, r_index--)
 	{
-		number = (*n1 - '0') + (*n2 - '0');
-		number += divide_10;
-		*(r + r_index) = (number % 10) + '0';
-		divide_10 = number / 10;
+		num = (*n1 - '0') + (*n2 - '0');
+		num += tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
 	}
 
 	for (; *n1; n1--, r_index--)
 	{
-		number = (*n1 - '0') + divide_10;
-		*(r + r_index) = (number % 10) + '0';
-		divide_10 = number / 10;
+		num = (*n1 - '0') + tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
 	}
 
 	for (; *n2; n2--, r_index--)
 	{
-		number = (*n2 - '0') + divide_10;
-		*(r + r_index) = (number % 10) + '0';
-		divide_10 = number / 10;
+		num = (*n2 - '0') + tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
 	}
 
-	if (divide_10 && r_index >= 0)
+	if (tens && r_index >= 0)
 	{
-		*(r + r_index) = (divide_10 % 10) + '0';
+		*(r + r_index) = (tens % 10) + '0';
 		return (r + r_index);
 	}
 
-	else if (divide_10 && r_index < 0)
+	else if (tens && r_index < 0)
 		return (0);
 
 	return (r + r_index + 1);
