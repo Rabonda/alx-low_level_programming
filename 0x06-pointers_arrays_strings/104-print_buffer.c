@@ -1,53 +1,107 @@
 #include "main.h"
+#include <stdio.h>
+
 /**
-*print_buffer -  C function that prints the content of an
-*  inputted number of bytes from a buffer.
-* Prints 10 bytes per line.
-* Starts with the position of the first byte in hexadecimal (8 chars),
-* starting with `0`.
-* Each line shows the hexadecimal content (2 chars) of the buffer,
-* 2 bytes at a time, separated by a space.
-* Each line shows the content of the buffer.
-* Prints the byte if it is printable; if not, prints `.`.
-* Each line ends with a new line `\n`.
-* If the inputted byte size is 0 or less, the function only prints a new line.
-*@b: number of bytes
-*@size: size of the byte
-*/
+ * print_buffer - Prints a buffer 10 bytes at a time, starting with
+ *                the byte position, then showing the hex content,
+ *                then displaying printable charcaters.
+ * @b: The buffer to be printed.
+ * @size: The number of bytes to be printed from the buffer.
+ */
+
 void print_buffer(char *b, int size)
 {
-	int i = 0, j;
-
-	if (size < 0)
+	int byte_hex, byte_index;
+	
+	byte_hex = 0;
+	while (byte_hex < size)
 	{
-		printf('\n');
-		return;
-	}
+		printf("%08x: ", byte_hex);
 
-	while (i < size)
-	{
-		if (i % 10 == 0)
-			printf("%08x: ", i);
-		for (j = i; j < i + 9; j += 2)
+		for (byte_index = 0; byte_index <= 9; byte_index++)
 		{
-			if ((j < size) && ((j + 1) < size))
-				printf("%02x%02x: ", b[j], b[j + 1]);
+			if ((byte_index + byte_hex) >= size)
+				printf("  ");
+
 			else
-			{
-				while (++j <= i + 10)
-					printf(" ");
+				printf("%02x", *(b + byte_index + byte_hex));
+
+			if ((byte_index % 2) != 0 && byte_index != 0)
 				printf(" ");
-			}
 		}
-		for (j = i; j < i + 9 && j < size; j++)
+
+		for (byte_index = 0; byte_index <= 9; byte_index++)
 		{
-			if (b[j] >= 32 && b[j] <= 126)
-				printf("%c", b[j]);
+			if ((byte_index + byte_hex) >= size)
+				break;
+
+			else if (*(b + byte_index + byte_hex) >= 31 &&
+				 *(b + byte_index + byte_hex) <= 126)
+				printf("%c", *(b + byte_index + byte_hex));
+
 			else
 				printf(".");
 		}
-		printf('\n');
-		i += 10;
+
+		if (byte_hex >= size)
+			continue;
+
+		printf("\n");
+		byte_hex += 10;
 	}
+
+	if (size <= 0)
+		printf("\n");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
