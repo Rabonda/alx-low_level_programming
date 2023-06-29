@@ -1,12 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - the program prints a[2] = 98, followed by a new line.
- * @a: array variable
- * @p: pointer variable
- * @n: The number of array.
- * Return: 0 (code success)
- */
 int main(void)
 {
   int n;
@@ -15,9 +8,16 @@ int main(void)
 
   a[2] = 1024;
   p = &n;
-
+  /**
+ * main - the program prints a[2] = 98, followed by a new line.
+ * @a: array variable
+ * @p: pointer variable
+ * @n: The number of array.
+ * Return: 0 (code success)
+ *
+ */
   *(p + 5) = 98;
-
+/* this prints 98 */
   printf("a[2] = %d\n", a[2]);
   return (0);
 }
