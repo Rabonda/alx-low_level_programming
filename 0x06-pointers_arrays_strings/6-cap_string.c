@@ -17,7 +17,7 @@ char *cap_string(char *str)
 			str_index++;
 
 		index_1 = str_index - 1;
-		
+
 		if (str[index_1] == ' ')
 			str[str_index] -= 32;
 		else if (str[index_1] == '\t')
