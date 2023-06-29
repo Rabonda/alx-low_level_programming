@@ -13,11 +13,13 @@ char *leet(char *str)
 
 	while (str[str_index_1])
 	{
-		for (str_index_2 = 0; str_index_2 <= 7; str_index_2++)
+		str_index_2 = 0;
+		while (str_index_2 <= 7)
 		{
 			if (str[str_index_1] == leet[str_index_2] ||
 			    str[str_index_1] - 32 == leet[str_index_2])
 				str[str_index_1] = str_index_2 + '0';
+			str_index_2++;
 		}
 
 		str_index_1++;
