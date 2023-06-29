@@ -16,9 +16,9 @@ char *leet(char *str)
 		str_index_2 = 0;
 		while (str_index_2 <= 7)
 		{
-			if (str[indx1] == leet[indx2] ||
-			    str[indx1] - 32 == leet[indx2])
-				str[indx1] = indx2 + '0';
+			if (str[str_index_1] == leet[str_index_2] ||
+			    str[str_index_1] - 32 == leet[str_index_2])
+				str[str_index_1] = str_index_2 + '0';
 			str_index_2++;
 		}
 		str_index_1++;
