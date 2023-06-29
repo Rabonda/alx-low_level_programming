@@ -9,41 +9,42 @@
 
 char *cap_string(char *str)
 {
-	int index;
+	int str_index;
 
-	for (index = 0; str[index]; index++)
+	for (str_index = 0; str[str_index]; str_index++)
 	{
-		while (!(str[index] >= 'a' && str[index] <= 'z'))
-			index++;
+		while (!(str[str_index] >= 'a' && str[str_index] <= 'z'))
+			str_index++;
 
-		if (str[index - 1] == ' ')
-			str[index] -= 32;
-		else if (str[index - 1] == '\t')
-			str[index] -= 32;
-		else if (str[index - 1] == '\n')
-			str[index] -= 32;
-		else if (str[index - 1] == ',')
-			str[index] -= 32;
-		else if (str[index - 1] == ';')
-			str[index] -= 32;
-		else if (str[index - 1] == '.')
-			str[index] -= 32;
-		else if (str[index - 1] == '!')
-			str[index] -= 32;
-		else if (str[index - 1] == '?')
-			str[index] -= 32;
-		else if (str[index - 1] == '"')
-			str[index] -= 32;
-		else if (str[index - 1] == '(')
-			str[index] -= 32;
-		else if (str[index - 1] == ')')
-			str[index] -= 32;
-		else if (str[index - 1] == '{')
-			str[index] -= 32;
-		else if (str[index - 1] == '}')
-			str[index] -= 32;
-		else if (index == 0)
-			str[index] -= 32;
+		index_1 = str_index - 1;
+		if (str[index_1] == ' ')
+			str[str_index] -= 32;
+		else if (str[index_1] == '\t')
+			str[str_index] -= 32;
+		else if (str[index_1] == '\n')
+			str[str_index] -= 32;
+		else if (str[index_1] == ',')
+			str[str_index] -= 32;
+		else if (str[index_1] == ';')
+			str[str_index] -= 32;
+		else if (str[index_1] == '.')
+			str[str_index] -= 32;
+		else if (str[index_1] == '!')
+			str[str_index] -= 32;
+		else if (str[index_1] == '?')
+			str[str_index] -= 32;
+		else if (str[index_1] == '"')
+			str[str_index] -= 32;
+		else if (str[index_1] == '(')
+			str[str_index] -= 32;
+		else if (str[index_1] == ')')
+			str[str_index] -= 32;
+		else if (str[index_1] == '{')
+			str[str_index] -= 32;
+		else if (str[index_1] == '}')
+			str[str_index] -= 32;
+		else if (str_index == 0)
+			str[str_index] -= 32;
 	}
 
 	return (str);
