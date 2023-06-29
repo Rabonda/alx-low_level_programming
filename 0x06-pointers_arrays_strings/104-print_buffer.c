@@ -11,32 +11,32 @@
 
 void print_buffer(char *b, int size)
 {
-	int byte_hex, index;
+	int byte_hex, byte_index;
 
 	for (byte_hex = 0; byte_hex < size; byte_hex += 10)
 	{
 		printf("%08x: ", byte_hex);
 
-		for (index = 0; index < 10; index++)
+		for (byte_index = 0; byte_index < 10; byte_index++)
 		{
-			if ((index + byte_hex) >= size)
+			if ((byte_index + byte_hex) >= size)
 				printf("  ");
 
 			else
-				printf("%02x", *(b + index + byte_hex));
+				printf("%02x", *(b + byte_index + byte_hex));
 
-			if ((index % 2) != 0 && index != 0)
+			if ((byte_index % 2) != 0 && byte_index != 0)
 				printf(" ");
 		}
 
-		for (index = 0; index < 10; index++)
+		for (byte_index = 0; byte_index < 10; byte_index++)
 		{
-			if ((index + byte_hex) >= size)
+			if ((byte_index + byte_hex) >= size)
 				break;
 
-			else if (*(b + index + byte_hex) >= 31 &&
-				 *(b + index + byte_hex) <= 126)
-				printf("%c", *(b + index + byte_hex));
+			else if (*(b + byte_index + byte_hex) >= 31 &&
+				 *(b + byte_index + byte_hex) <= 126)
+				printf("%c", *(b + byte_index + byte_hex));
 
 			else
 				printf(".");
