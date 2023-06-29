@@ -12,7 +12,7 @@
 void print_buffer(char *b, int size)
 {
 	int byte_hex, byte_index;
-
+	
 	byte_hex = 0;
 	while (byte_hex < size)
 	{
