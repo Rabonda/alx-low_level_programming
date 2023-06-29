@@ -13,9 +13,7 @@ void print_buffer(char *b, int size)
 {
 	int byte_hex, byte_index;
 
-	byte_hex = 0;
-
-	while (byte_hex < size)
+	for (byte_hex = 0; byte_hex < size; byte_hex += 10;)
 	{
 		printf("%08x: ", byte_hex);
 
@@ -48,7 +46,6 @@ void print_buffer(char *b, int size)
 			continue;
 
 		printf("\n");
-		byte_hex += 10;
 	}
 
 	if (size <= 0)
