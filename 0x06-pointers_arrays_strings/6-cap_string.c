@@ -9,7 +9,7 @@
 
 char *cap_string(char *str)
 {
-	int str_index;
+	int str_index, index_1;
 
 	for (str_index = 0; str[str_index]; str_index++)
 	{
@@ -17,6 +17,7 @@ char *cap_string(char *str)
 			str_index++;
 
 		index_1 = str_index - 1;
+		
 		if (str[index_1] == ' ')
 			str[str_index] -= 32;
 		else if (str[index_1] == '\t')
@@ -46,6 +47,5 @@ char *cap_string(char *str)
 		else if (str_index == 0)
 			str[str_index] -= 32;
 	}
-
 	return (str);
 }
