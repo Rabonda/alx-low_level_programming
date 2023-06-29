@@ -33,7 +33,7 @@ char *rot13(char *str)
 	while (str[str_index_1])
 	{
 		str_index_2 = 0;
-		while (str_index_2 < 52)
+		while (str_index_2 <= 51)
 		{
 			if (str[str_index_1] == alphabet[str_index_2])
 			{
