@@ -31,7 +31,7 @@ void print_buffer(char *b, int size)
 
 		for (index = 0; index < 10; index++)
 		{
-			if ((index + byte) >= size)
+			if ((index + byte_hex) >= size)
 				break;
 
 			else if (*(b + index + byte_hex) >= 31 &&
