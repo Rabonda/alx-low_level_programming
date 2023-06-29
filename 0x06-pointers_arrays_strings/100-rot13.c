@@ -32,13 +32,15 @@ char *rot13(char *str)
 
 	while (str[str_index_1])
 	{
-		for (str_index_2 = 0; str_index_2 < 52; str_index_2++)
+		str_index_2 = 0;
+		while (str_index_2 < 52)
 		{
 			if (str[str_index_1] == alphabet[str_index_2])
 			{
 				str[str_index_1] = rot13key[str_index_2];
 				break;
 			}
+			str_index_2++;
 		}
 
 		str_index_1++;
