@@ -18,7 +18,7 @@ void print_number(int n)
 	half_10 = num / 10;
 	if (half_10 > 0)
 		print_number(half_10);
-
+	mod_10 = num % 10;
 	_putchar(mod_10 + '0');
 }
 
