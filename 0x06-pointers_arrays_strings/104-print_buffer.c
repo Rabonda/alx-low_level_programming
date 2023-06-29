@@ -8,11 +8,10 @@
  * @b: The buffer to be printed.
  * @size: The number of bytes to be printed from the buffer.
  */
-
 void print_buffer(char *b, int size)
 {
 	int byte_hex, byte_index;
-	
+
 	byte_hex = 0;
 	while (byte_hex < size)
 	{
