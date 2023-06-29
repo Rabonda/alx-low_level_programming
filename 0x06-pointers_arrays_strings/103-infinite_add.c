@@ -47,14 +47,13 @@ char *add_strings(char *n1, char *n2, char *r, int r_index)
 	return (r + r_index + 1);
 }
 /**
- * infinite_add - Adds two numbers.
+ * infinite_add - a function that adds two numbers.
  * @n1: The first number to be added.
  * @n2: The second number to be added.
- * @r: The buffer to store the result.
- * @size_r: The buffer size.
+ * @r: to store the result.
+ * @size_r: the array size.
  *
- * Return: If r can store the sum - a pointer to the result.
- *         If r cannot store the sum - 0.
+ * Return: store the sum
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
