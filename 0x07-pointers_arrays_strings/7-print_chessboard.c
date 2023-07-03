@@ -8,14 +8,14 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i, j, bool;
+	unsigned int row, col, bool;
 
-	for (i = 0; *(s + i) != '\0'; i++)
+	for (row = 0; *(s + row) != '\0'; row++)
 	{
 		bool = 1;
-		for (j = 0; *(accept + j) != '\0'; j++)
+		for (col = 0; *(accept + col) != '\0'; col++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (*(s + row) == *(accept + col))
 			{
 				bool = 0;
 				break;
@@ -24,6 +24,6 @@ unsigned int _strspn(char *s, char *accept)
 		if (bool == 1)
 			break;
 	}
-	return (i);
+	return (row);
 }
 
