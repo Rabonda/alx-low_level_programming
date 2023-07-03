@@ -8,26 +8,21 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int row, col, fall_to_bits;
+	unsigned int i, j, bool;
 
-	row = 0;
-	while (*(s + row) != '\0')
+	for (i = 0; *(s + i) != '\0'; i++)
 	{
-		fall_to_bits = 1;
-		col = 0;
-		while (*(accept + col) != '\0')
+		bool = 1;
+		for (j = 0; *(accept + j) != '\0'; j++)
 		{
-			if (*(s + row) == *(accept + col))
+			if (*(s + i) == *(accept + j))
 			{
-				fall_to_bits = 0;
+				bool = 0;
 				break;
 			}
-			col++;
 		}
-		if (fall_to_bits == 1)
+		if (bool == 1)
 			break;
-		row++;
 	}
-	return (row);
+	return (i);
 }
-
