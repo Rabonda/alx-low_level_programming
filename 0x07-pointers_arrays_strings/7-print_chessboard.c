@@ -1,29 +1,25 @@
 #include "main.h"
 
 /**
- * _strspn - gets the length of a prefix substring.
- * @s: initial segment.
- * @accept: accepted bytes.
- * Return: the number of accepted bytes.
+ * print_chessboard - prints the chessboard
+ * @a: input pointer.
+ * Return: no return.
  */
-unsigned int _strspn(char *s, char *accept)
+void print_chessboard(char (*a)[8])
 {
-	unsigned int i, j, bool;
+	unsigned int row, board = 0;
 
-	for (i = 0; *(s + i) != '\0'; i++)
+	row = 0;
+	while (row < 64)
 	{
-		bool = 1;
-		for (j = 0; *(accept + j) != '\0'; j++)
+		if (row % 8 == 0 && row != 0)
 		{
-			if (*(s + i) == *(accept + j))
-			{
-				bool = 0;
-				break;
-			}
+			board = row;
+			_putchar('\n');
 		}
-		if (bool == 1)
-			break;
-	}
-	return (i);
-}
+		_putchar(a[row / 8][row - board]);
 
+		row += 1;
+	}
+	_putchar('\n');
+}
