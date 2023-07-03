@@ -10,19 +10,23 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int row, col, bool;
 
-	for (row = 0; *(s + row) != '\0'; row++)
+	row = 0;
+	while (*(s + row) != '\0')
 	{
 		bool = 1;
-		for (col = 0; *(accept + col) != '\0'; col++)
+		col = 0;
+		while (*(accept + col) != '\0')
 		{
 			if (*(s + row) == *(accept + col))
 			{
 				bool = 0;
 				break;
 			}
+			col++;
 		}
 		if (bool == 1)
 			break;
+		row++;
 	}
 	return (row);
 }
