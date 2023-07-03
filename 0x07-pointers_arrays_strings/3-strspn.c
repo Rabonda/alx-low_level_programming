@@ -13,12 +13,12 @@ unsigned int _strspn(char *s, char *accept)
 
 	for (row = 0; *(s + row) != '\0'; row++)
 	{
-		fall_to_bits = 0;
+		fall_to_bits = 1;
 		for (col = 0; *(accept + col) != '\0'; col++)
 		{
 			if (*(s + row) == *(accept + col))
 			{
-				fall_to_bits = 1;
+				fall_to_bits = 0;
 				break;
 			}
 		}
