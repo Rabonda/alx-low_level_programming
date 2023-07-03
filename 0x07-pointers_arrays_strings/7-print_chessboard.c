@@ -8,23 +8,23 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int row, col, bool;
+	unsigned int row, col, fall_to_bits;
 
 	row = 0;
 	while (*(s + row) != '\0')
 	{
-		bool = 1;
+		fall_to_bits = 1;
 		col = 0;
 		while (*(accept + col) != '\0')
 		{
 			if (*(s + row) == *(accept + col))
 			{
-				bool = 0;
+				fall_to_bits = 0;
 				break;
 			}
 			col++;
 		}
-		if (bool == 1)
+		if (fall_to_bits == 1)
 			break;
 		row++;
 	}
