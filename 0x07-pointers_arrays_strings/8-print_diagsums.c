@@ -11,12 +11,15 @@ void print_diagsums(int *a, int size)
 {
 	int row, firstSum = 0, secondSum = 0;
 
-	for (row = 0; row < (size * size); row++)
+	row = 0;
+	while (row < (size * size))
 	{
 		if (row % (size + 1) == 0)
 			firstSum += *(a + row);
 		if (row % (size - 1) == 0 && row != 0 && row < size * size - 1)
 			secondSum += *(a + row);
+
+		row += 1;
 	}
 	printf("%d, %d\n", firstSum, secondSum);
 }
