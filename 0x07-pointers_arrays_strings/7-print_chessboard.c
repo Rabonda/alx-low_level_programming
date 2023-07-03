@@ -9,7 +9,8 @@ void print_chessboard(char (*a)[8])
 {
 	unsigned int row, block = 0;
 
-	for (row = 0; row < 64; row++)
+	row = 0; 
+	while (row < 64)
 	{
 		if (row % 8 == 0 && row != 0)
 		{
@@ -17,6 +18,7 @@ void print_chessboard(char (*a)[8])
 			_putchar('\n');
 		}
 		_putchar(a[row / 8][row - block]);
+		row += 1;
 	}
 	_putchar('\n');
 }
