@@ -18,7 +18,7 @@ int square_root(int n, int r)
 		return (-1);
 	}
 	else
-		return (find_sqrt(n, r + 1));
+		return (square_root(n, r + 1));
 }
 
 /**
