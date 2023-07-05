@@ -13,5 +13,7 @@ int is_palindrome(char *s);
 int wildcmp(char *s1, char *s2);
 int square_root(int n, int r);
 int divisible_num(int num, int div);
+int find_string_length(char *s);
+int check_palindrome(char *s, int len, int index);
 
 #endif
