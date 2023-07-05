@@ -225,22 +225,21 @@ julien@ubuntu:~/0x08. Recursion$
 -   Directory: `0x08-recursion`
 -   File: `4-pow_recursion.c`
 
- Done? Help Check your code Get a sandbox
 
-### 5\. strstr
+
+### 5\. Your subconscious is looking for the dreamer
 
 mandatory
 
-Write a function that locates a substring.
+Write a function that returns the natural square root of a number.
 
--   Prototype: `char *_strstr(char *haystack, char *needle);`
--   The `_strstr()` function finds the first occurrence of the substring `needle` in the string `haystack`. The terminating null bytes (`\0`) are not compared
--   Returns a pointer to the beginning of the located substring, or `NULL` if the substring is not found.
+-   Prototype: int _sqrt_recursion(int n);
+-   If n does not have a natural square root, the function should return -1
 
-FYI: The standard library provides a similar function: `strstr`. Run `man strstr` to learn more.
+FYI: The standard library provides a similar function: `sqrt`. Run `man sqrt` to learn more.
 
 ```
-julien@ubuntu:~/0x07$ cat 5-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 5-main.c 
 #include "main.h"
 #include <stdio.h>
 
@@ -251,39 +250,51 @@ julien@ubuntu:~/0x07$ cat 5-main.c
  */
 int main(void)
 {
-    char *s = "hello, world";
-    char *f = "world";
-    char *t;
+    int r;
 
-    t = _strstr(s, f);
-    printf("%s\n", t);
+    r = _sqrt_recursion(1);
+    printf("%d\n", r);
+    r = _sqrt_recursion(1024);
+    printf("%d\n", r);
+    r = _sqrt_recursion(16);
+    printf("%d\n", r);
+    r = _sqrt_recursion(17);
+    printf("%d\n", r);
+    r = _sqrt_recursion(25);
+    printf("%d\n", r);
+    r = _sqrt_recursion(-1);
+    printf("%d\n", r);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-strstr.c -o 5-strstr
-julien@ubuntu:~/0x07$ ./5-strstr
-world
-julien@ubuntu:~/0x07$
+julien@ubuntu:~/0x08. gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-sqrt_recursion.c -o 5-sqrt
+julien@ubuntu:~/0x08. Recursion$ ./5-sqrt 
+1
+32
+4
+-1
+5
+-1
+julien@ubuntu:~/0x08. Recursion$
 
 ```
 
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
--   File: `5-strstr.c`
+-   Directory: `0x08-recursion`
+-   File: `5-sqrt_recursion.c`
 
- Done? Help Check your code Get a sandbox
 
-### 6\. Chess is mental torture
+
+### 6\. Inception. Is it possible?
 
 mandatory
 
-Write a function that prints the chessboard.
+Write a function that returns 1 if the input integer is a prime number, otherwise return 0.
 
--   Prototype: `void print_chessboard(char (*a)[8]);`
-
+-   Prototype: int is_prime_number(int n);
 ```
-julien@ubuntu:~/0x07$ cat 7-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 6-main.c
 #include "main.h"
 #include <stdio.h>
 
@@ -294,37 +305,46 @@ julien@ubuntu:~/0x07$ cat 7-main.c
  */
 int main(void)
 {
-    char board[8][8] = {
-        {'r', 'k', 'b', 'q', 'k', 'b', 'k', 'r'},
-        {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-        {'R', 'K', 'B', 'Q', 'K', 'B', 'K', 'R'},
-    };
-    print_chessboard(board);
+    int r;
+
+    r = is_prime_number(1);
+    printf("%d\n", r);
+    r = is_prime_number(1024);
+    printf("%d\n", r);
+    r = is_prime_number(16);
+    printf("%d\n", r);
+    r = is_prime_number(17);
+    printf("%d\n", r);
+    r = is_prime_number(25);
+    printf("%d\n", r);
+    r = is_prime_number(-1);
+    printf("%d\n", r);
+    r = is_prime_number(113);
+    printf("%d\n", r);
+    r = is_prime_number(7919);
+    printf("%d\n", r);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 7-main.c 7-print_chessboard.c -o 7-print_chessboard
-julien@ubuntu:~/0x07$ ./7-print_chessboard
-rkbqkbkr
-pppppppp
-
-PPPPPPPP
-RKBQKBKR
-julien@ubuntu:~/0x07$
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 6-main.c 6-is_prime_number.c -o 6-prime
+julien@ubuntu:~/0x08. Recursion$ ./6-prime 
+0
+0
+0
+1
+0
+0
+1
+1
+julien@ubuntu:~/0x08. Recursion$ 
 
 ```
 
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
--   File: `7-print_chessboard.c`
+-   Directory: `0x08-recursion`
+-   File: `6-is_prime_number.c`
 
- Done? Help Check your code Get a sandbox
 
 ### 7\. The line of life is a ragged diagonal between duty and desire
 
