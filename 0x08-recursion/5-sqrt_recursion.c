@@ -40,5 +40,5 @@ int _sqrt_recursion(int n)
 		return (-1);
 	}
 	else
-		return (find_sqrt(n, r));
+		return (square_root(n, r));
 }
