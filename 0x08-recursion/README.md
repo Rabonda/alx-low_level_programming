@@ -346,20 +346,16 @@ julien@ubuntu:~/0x08. Recursion$
 -   File: `6-is_prime_number.c`
 
 
-### 7\. The line of life is a ragged diagonal between duty and desire
-
+### 7\. They say we only use a fraction of our brain's true potential. Now that's when we're awake. When we're asleep, we can do almost anything
 mandatory
 
-Write a function that prints the sum of the two diagonals of a square matrix of integers.
+Write a function that returns 1 if a string is a palindrome and 0 if not.
 
--   Prototype: `void print_diagsums(int *a, int size);`
--   Format: see example
--   You are allowed to use the standard library
-
-Note that in the following example we are casting an `int[][]` into an `int*`. This is not something you should do. The goal here is to make sure you understand how an array of array is stored in memory.
+-  Prototype: int is_palindrome(char *s);
+-  An empty string is a palindrome
 
 ```
-julien@ubuntu:~/0x07$ cat 8-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 100-main.c
 #include "main.h"
 #include <stdio.h>
 
@@ -370,37 +366,34 @@ julien@ubuntu:~/0x07$ cat 8-main.c
  */
 int main(void)
 {
-    int c3[3][3] = {
-        {0, 1, 5},
-        {10, 11, 12},
-        {1000, 101, 102},
-    };
-    int c5[5][5] = {
-        {0, 1, 5, 12124, 1234},
-        {10, 11, 12, 123521, 12512},
-        {1000, 101, 102, 12545, 214543435},
-        {100, 1012451, 11102, 12545, 214543435},
-        {10, 12401, 10452, 11542545, 1214543435},
-    };
-    print_diagsums((int *)c3, 3);
-    print_diagsums((int *)c5, 5);
+    int r;
+
+    r = is_palindrome("level");
+    printf("%d\n", r);
+    r = is_palindrome("redder");
+    printf("%d\n", r);
+    r = is_palindrome("test");
+    printf("%d\n", r);
+    r = is_palindrome("step on no pets");
+    printf("%d\n", r);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 8-main.c 8-print_diagsums.c -o 8-print_diagsums
-julien@ubuntu:~/0x07$ ./8-print_diagsums
-113, 1016
-1214556093, 1137318
-julien@ubuntu:~/0x07$
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 100-is_palindrome.c -o 100-palindrome
+julien@ubuntu:~/0x08. Recursion$ ./100-palindrome 
+1
+1
+0
+1
+julien@ubuntu:~/0x08. Recursion$
 
 ```
 
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
--   File: `8-print_diagsums.c`
+-   Directory: `0x08-recursion`
+-   File: `100-is_palindrome.c`
 
- Done? Help Check your code Get a sandbox
 
 ### 8\. Double pointer, double fun
 
