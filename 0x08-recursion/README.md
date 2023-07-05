@@ -170,20 +170,18 @@ julien@ubuntu:~/0x08. Recursion$
 -   File: `3-factorial.c`
 
 
-### 4\. strpbrk
+### 4\.  Once an idea has taken hold of the brain it's almost impossible to eradicate
 
 mandatory
 
-Write a function that searches a string for any of a set of bytes.
+Write a function that returns the value of x raised to the power of y.
+-   Prototype: int _pow_recursion(int x, int y);
+-   If y is lower than 0, the function should return -1
 
--   Prototype: `char *_strpbrk(char *s, char *accept);`
--   The `_strpbrk()` function locates the first occurrence in the string `s` of any of the bytes in the string `accept`
--   Returns a pointer to the byte in `s` that matches one of the bytes in `accept`, or `NULL` if no such byte is found
-
-FYI: The standard library provides a similar function: `strpbrk`. Run `man strpbrk` to learn more.
+FYI: The standard library provides a similar function: `pow`. Run `man pow` to learn more.
 
 ```
-julien@ubuntu:~/0x07$ cat 4-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 4-main.c
 #include "main.h"
 #include <stdio.h>
 
@@ -194,26 +192,38 @@ julien@ubuntu:~/0x07$ cat 4-main.c
  */
 int main(void)
 {
-    char *s = "hello, world";
-    char *f = "world";
-    char *t;
+    int r;
 
-    t = _strpbrk(s, f);
-    printf("%s\n", t);
+    r = _pow_recursion(1, 10);
+    printf("%d\n", r);
+    r = _pow_recursion(1024, 0);
+    printf("%d\n", r);
+    r = _pow_recursion(2, 16);
+    printf("%d\n", r);
+    r = _pow_recursion(5, 2);
+    printf("%d\n", r);
+    r = _pow_recursion(5, -2);
+    printf("%d\n", r);
+    r = _pow_recursion(-5, 3);
+    printf("%d\n", r);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 4-strpbrk.c -o 4-strpbrk
-julien@ubuntu:~/0x07$ ./4-strpbrk
-llo, world
-julien@ubuntu:~/0x07$
-
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 4-pow_recursion.c -o 4-pow
+julien@ubuntu:~/0x08. Recursion$ ./4-pow 
+1
+1
+65536
+25
+-1
+-125
+julien@ubuntu:~/0x08. Recursion$
 ```
 
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
--   File: `4-strpbrk.c`
+-   Directory: `0x08-recursion`
+-   File: `4-pow_recursion.c`
 
  Done? Help Check your code Get a sandbox
 
