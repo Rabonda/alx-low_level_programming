@@ -119,19 +119,18 @@ julien@ubuntu:~/0x08. Recursion$
 -   File: `2-strlen_recursion.c`
 
 
-### 3\. strspn
+### 3\. You mustn't be afraid to dream a little bigger, darling
 
 mandatory
 
-Write a function that gets the length of a prefix substring.
+Write a function that returns the factorial of a given number.
 
--   Prototype: `unsigned int _strspn(char *s, char *accept);`
--   Returns the number of bytes in the initial segment of `s` which consist only of bytes from `accept`
-
-FYI: The standard library provides a similar function: `strspn`. Run `man strspn` to learn more.
+-   Prototype: int factorial(int n);
+-   If n is lower than 0, the function should return -1 to indicate an error
+-   Factorial of 0 is 1
 
 ```
-julien@ubuntu:~/0x07$ cat 3-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 3-main.c
 #include "main.h"
 #include <stdio.h>
 
@@ -142,18 +141,25 @@ julien@ubuntu:~/0x07$ cat 3-main.c
  */
 int main(void)
 {
-    char *s = "hello, world";
-    char *f = "oleh";
-    unsigned int n;
+    int r;
 
-    n = _strspn(s, f);
-    printf("%u\n", n);
+    r = factorial(1);
+    printf("%d\n", r);
+    r = factorial(5);
+    printf("%d\n", r);
+    r = factorial(10);
+    printf("%d\n", r);
+    r = factorial(-1024);
+    printf("%d\n", r);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-strspn.c -o 3-strspn
-julien@ubuntu:~/0x07$ ./3-strspn
-5
-julien@ubuntu:~/0x07$
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-factorial.c -o 3-factorial
+julien@ubuntu:~/0x08. Recursion$ ./3-factorial 
+1
+120
+3628800
+-1
+julien@ubuntu:~/0x08. Recursion$
 
 ```
 
@@ -161,9 +167,8 @@ julien@ubuntu:~/0x07$
 
 -   GitHub repository: `alx-low_level_programming`
 -   Directory: `0x08-recursion`
--   File: `3-strspn.c`
+-   File: `3-factorial.c`
 
- Done? Help Check your code Get a sandbox
 
 ### 4\. strpbrk
 
