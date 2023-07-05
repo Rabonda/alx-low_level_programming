@@ -14,7 +14,7 @@ Write a function that prints a string, followed by a new line.
 
 -  Prototype: void _puts_recursion(char *s);
 
-FYI: The standard library provides a similar function: `puts`. Run `man memset` to learn more.
+FYI: The standard library provides a similar function: `puts`. Run `man puts` to learn more.
 
 ```
 julien@ubuntu:~/0x08. Recursion$ cat 0-main.c
@@ -77,19 +77,18 @@ julien@ubuntu:~/0x08. Recursion$
 -   File: `1-print_rev_recursion.c`
 
 
-### 2\. strchr
+### 2\.  Dreams feel real while we're in them. It's only when we wake up that we realize something was actually strange
 
 mandatory
 
-Write a function that locates a character in a string.
+Write a function that returns the length of a string.
 
--   Prototype: `char *_strchr(char *s, char c);`
--   Returns a pointer to the first occurrence of the character `c` in the string `s`, or `NULL` if the character is not found
+-   Prototype: int _strlen_recursion(char *s);
 
-FYI: The standard library provides a similar function: `strchr`. Run `man strchr` to learn more.
+FYI: The standard library provides a similar function: `strlen`. Run `man strlen` to learn more.
 
 ```
-julien@ubuntu:~/0x07$ cat 2-main.c
+julien@ubuntu:~/0x08. Recursion$ cat 2-main.c 
 #include "main.h"
 #include <stdio.h>
 
@@ -100,31 +99,25 @@ julien@ubuntu:~/0x07$ cat 2-main.c
  */
 int main(void)
 {
-    char *s = "hello";
-    char *f;
+    int n;
 
-    f = _strchr(s, 'l');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
+    n = _strlen_recursion("Corbin Coleman");
+    printf("%d\n", n);
     return (0);
 }
-julien@ubuntu:~/0x07$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-strchr.c -o 2-strchr
-julien@ubuntu:~/0x07$ ./2-strchr
-llo
-julien@ubuntu:~/0x07$
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89  2-main.c 2-strlen_recursion.c -o 2-strlen_recursion
+julien@ubuntu:~/0x08. Recursion$ ./2-strlen_recursion 
+14
+julien@ubuntu:~/0x08. Recursion$ 
 
 ```
 
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
--   File: `2-strchr.c`
+-   Directory: `0x08-recursion`
+-   File: `2-strlen_recursion.c`
 
- Done? Help Check your code Get a sandbox
 
 ### 3\. strspn
 
@@ -167,7 +160,7 @@ julien@ubuntu:~/0x07$
 **Repo:**
 
 -   GitHub repository: `alx-low_level_programming`
--   Directory: `0x07-pointers_arrays_strings`
+-   Directory: `0x08-recursion`
 -   File: `3-strspn.c`
 
  Done? Help Check your code Get a sandbox
