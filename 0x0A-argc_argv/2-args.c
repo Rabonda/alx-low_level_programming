@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int x;
 
 	x = 0;
-	while (i < argc)
+	while (x < argc)
 	{
 		printf("%s\n", argv[x]);
 		x++;
