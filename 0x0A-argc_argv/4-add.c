@@ -11,17 +11,21 @@ int main(int argc, char *argv[])
 {
 	int row, col, sum = 0;
 
-	for (row = 1; row < argc; row++)
+	row = 1;
+	while (row < argc)
 	{
-		for (col = 0; argv[row][col] != '\0'; col++)
+		col = 0;
+		while (argv[row][col] != '\0')
 		{
 			if (!isdigit(argv[row][col]))
 			{
 				printf("Error\n");
 				return (1);
 			}
+			col++;
 		}
 		sum += atoi(argv[row]);
+		row++;
 	}
 	printf("%d\n", sum);
 	return (0);
