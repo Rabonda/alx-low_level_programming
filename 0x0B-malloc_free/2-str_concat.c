@@ -2,38 +2,47 @@
 #include <stdlib.h>
 
 /**
-  * str_concat - Concatenates two strings.
-  * @s1: The string to be concatenated upon.
-  * @s2: The string to be concatenated to s1.
-  * Return: NULL, if concatenation fails
-  * Else, a pointer to the newly-allocated space in memory
-  * containing the concatenated strings.
+  * str_concat - function that concatenates two strings.
+  * @s1: The string to be concatenated.
+  * @s2: The string to be concatenated.
+  * Return: concatenates two strings.
   */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *concat_str;
-	int x, concat_x = 0, length = 0;
+	char *concatenate_string;
+	int count, count_concat = 0, len = 0;
 
 	if (s1 == NULL)
 		s1 = "";
 
 	if (s2 == NULL)
 		s2 = "";
+	count = 0;
+	while (s1[count] || s2[count])
+	{
+		len++;
+		count++;
+	}
 
-	for (x = 0; s1[x] || s2[x]; x++)
-		length++;
+	concatenate_string = malloc(sizeof(char) * len);
 
-	concat_str = malloc(sizeof(char) * length);
-
-	if (concat_str == NULL)
+	if (concatenate_string == NULL)
 		return (NULL);
 
-	for (x = 0; s1[x]; x++)
-		concat_str[concat_x++] = s1[x];
+	count = 0;
+	while (s1[count])
+	{
+		concatenate_string[count_concat++] = s1[count];
+		count++;
+	}
 
-	for (x = 0; s2[x]; x++)
-		concat_str[concat_x++] = s2[x];
+	count = 0;
+	while (s2[count])
+	{
+		concatenate_string[count_concat++] = s2[count];
+		count++;
+	}
 
-	return (concat_str);
+	return (concatenate_string);
 }
