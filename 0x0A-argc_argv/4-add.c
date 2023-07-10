@@ -2,27 +2,27 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * main - adds positive numbers.
+ * main - function that adds positive numbers.
  * @argc: number of command line arguments.
  * @argv: array that contains the program command line arguments.
- * Return: 0 - success.
+ * Return: returns 0 code success.
  */
 int main(int argc, char *argv[])
 {
-	int i, j, add = 0;
+	int row, col, sum = 0;
 
-	for (i = 1; i < argc; i++)
+	for (row = 1; row < argc; row++)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (col = 0; argv[row][col] != '\0'; col++)
 		{
-			if (!isdigit(argv[i][j]))
+			if (!isdigit(argv[row][col]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 		}
-		add += atoi(argv[i]);
+		sum += atoi(argv[row]);
 	}
-	printf("%d\n", add);
+	printf("%d\n", sum);
 	return (0);
 }
