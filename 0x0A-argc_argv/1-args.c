@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-
 /**
- * main - Print the number of arguments passed
+ * main - function that print the number of arguments passed
  * @argc: size of *argv
  * @argv: array of strings
- * Return: 0 on success
+ * Return: 0 code success
  */
 int main(int argc, char *argv[])
 {
