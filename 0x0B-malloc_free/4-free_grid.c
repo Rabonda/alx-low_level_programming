@@ -2,21 +2,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * free_grid - use free function on previous grid
- * @grid: 2 dim. array to free
- * @height: input height (size)
- * Return: free'd grid
+ * free_grid - function that use free function on previous grid
+ * @grid: 2 dim array to free
+ * @height: input height
+ * Return: free function on previous grid
  */
 void free_grid(int **grid, int height)
 {
-	int i;
+	int row;
 
 	if (grid != NULL || height != 0)
 	{
-		for (i = 0; i < height; i++)
-		{
-			free(grid[i]);
-		}
+		for (row = 0; row < height; row++)
+			free(grid[row]);
+
 		free(grid);
 	}
 }
