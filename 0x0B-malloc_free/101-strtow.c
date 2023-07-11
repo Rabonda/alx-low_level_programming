@@ -90,7 +90,7 @@ while (row < string_length)
 if (str[row] != ' ')
 {
 row = strncat_mod(newstring[x], str, row, string_length);
-c++, row--;
+x++, row--;
 }
 row++;
 }
