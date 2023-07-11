@@ -73,27 +73,27 @@ return (word);
  */
 char **strtow(char *str)
 {
-char **newstr;
-int i = 0, j = 0, str_len = 0, words;
+char **newstring;
+int row = 0, x = 0, string_length = 0, words;
 
 if (str == NULL || str[0] == '\0')
 return (NULL);
-while (*(str + str_len) != '\0')
-str_len++;
-words = word_count(str, str_len);
+while (*(str + string_length) != '\0')
+string_length++;
+words = word_count(str, string_length);
 if (!words)
 return (NULL);
-newstr = malloc((words + 1) * sizeof(char *));
-mallocmem(newstr, str, str_len);
-while (i < str_len)
+newstring = malloc((words + 1) * sizeof(char *));
+mallocmem(newstring, str, string_length);
+while (row < string_length)
 {
-if (str[i] != ' ')
+if (str[row] != ' ')
 {
-i = strncat_mod(newstr[j], str, i, str_len);
-j++, i--;
+row = strncat_mod(newstring[x], str, row, string_length);
+c++, row--;
 }
-i++;
+row++;
 }
-newstr[words + 1] = NULL;
-return (newstr);
+newstring[words + 1] = NULL;
+return (newstring);
 }
