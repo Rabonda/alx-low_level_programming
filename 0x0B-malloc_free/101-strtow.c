@@ -29,18 +29,19 @@ return (i);
  */
 void mallocmem(char **newstr, char *str, int str_len)
 {
-int row, x = 0, length = 1;
+int i = 0, j = 0, word_len = 1;
 
-for (row = 0; row < str_len; row++)
+while (i < str_len)
 {
-if (str[row] != ' ')
+if (str[i] != ' ')
 {
-while (str[row] != ' ' && row < str_len)
-row++, length++;
-newstr[x] = malloc(sizeof(char) * length);
-newstr[x][length] = '\0';
-x++, length = 1;
+while (str[i] != ' ' && i < str_len)
+i++, word_len++;
+newstr[j] = malloc(sizeof(char) * word_len);
+newstr[j][word_len] = '\0';
+j++, word_len = 1;
 }
+i++;
 }
 }
 /**
