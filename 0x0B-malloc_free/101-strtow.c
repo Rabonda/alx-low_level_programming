@@ -51,21 +51,20 @@ count++, length = 1;
  */
 int word_count(char *str, int str_len)
 {
-int i = 0, words = 0;
+int row = 0, word = 0;
 
-while (i < str_len)
+for (row = 0; row < str_len; row++)
 {
-if (str[i] != ' ')
+if (str[row] != ' ')
 {
-while (str[i] != ' ' && i < str_len)
-i++;
-words++;
+while (str[row] != ' ' && i < str_len)
+row++;
+word++;
 }
-i++;
 }
-if (words == 0)
+if (word == 0)
 return (0);
-return (words);
+return (word);
 }
 /**
  * strtow - splits a string into words
