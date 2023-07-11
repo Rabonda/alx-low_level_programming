@@ -11,7 +11,7 @@
  */
 int strncat_mod(char *dest, char *src, int i, int str_len)
 {
-  int count = 0;
+int count = 0;
 
   while (src[i] != ' ' && i < str_len)
   {
