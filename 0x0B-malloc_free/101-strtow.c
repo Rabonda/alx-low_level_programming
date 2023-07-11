@@ -2,44 +2,46 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * strncat_mod - concatenates string with n bytes from another string
- * @dest: destination string
- * @src: source string
- * @i: index of beginning char from source string to copy
- * @str_len: string length
- * Return: next index to check of source string
+ * strncat_mod - Function that concatenates string with another string.
+ * @dest: destination string variable.
+ * @src: source string variable.
+ * @i: index of a string variable.
+ * @str_len: string length.
+ * Return: next index.
  */
 int strncat_mod(char *dest, char *src, int i, int str_len)
 {
-int j;
+  int count = 0;
 
-for (j = 0; src[i] != ' ' && i < str_len; i++, j++)
-dest[j] = src[i];
-return (i);
+  while (src[i] != ' ' && i < str_len)
+  {
+    dest[count] = src[i];
+    i++, count++;
+  }
+  return (i);
 }
 /**
- * mallocmem - allocates memory for output array and sets NULL at string end
- * @newstr: new string
- * @str: input string
+ * mallocmem - function that allocates memory and sets NULL at string.
+ * @newstr: new string variable
+ * @str: string variable
  * @str_len: string length
- * Return: void
+ * Return: void that allocates memory and sets NULL at string.
  */
 void mallocmem(char **newstr, char *str, int str_len)
 {
-int i = 0, j = 0, word_len = 1;
-
-while (i < str_len)
-{
-if (str[i] != ' ')
-{
-while (str[i] != ' ' && i < str_len)
-i++, word_len++;
-newstr[j] = malloc(sizeof(char) * word_len);
-newstr[j][word_len] = '\0';
-j++, word_len = 1;
-}
-i++;
-}
+  int row, x = 0, length = 1;
+  
+  for (row = 0; row < str_len; row++)
+  {
+    if (str[row] != ' ')
+    {
+      while (str[row] != ' ' && row < str_len)
+        row++, length++;
+      newstr[x] = malloc(sizeof(char) * length);
+      newstr[x][length] = '\0';
+      x++, length = 1;
+    }
+  }
 }
 /**
  * word_count - counts words in input string
