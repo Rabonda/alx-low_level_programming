@@ -8,8 +8,8 @@
   */
 char *argstostr(int ac, char **av)
 {
-	int row, col, k = 0, length = 0;
-	char *str;
+	int row, col, count = 0, length = 0;
+	char *string_concatenate;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -23,8 +23,8 @@ char *argstostr(int ac, char **av)
 	}
 	length = length + ac;
 
-	str = malloc(sizeof(char) * length + 1);
-	if (str == NULL)
+	string_concatenate = malloc(sizeof(char) * length + 1);
+	if (string_concatenate == NULL)
 		return (NULL);
 
 	row = 0;
@@ -33,14 +33,14 @@ char *argstostr(int ac, char **av)
 		col = 0;
 		while (av[row][col])
 		{
-			str[k] = av[row][col];
-			k++;
+			string_concatenate[k] = av[row][col];
+			count++;
 			col++;
 		}
-		if (str[k] == '\0')
-			str[k++] = '\n';
+		if (string_concatenate[k] == '\0')
+			string_concatenate[count++] = '\n';
 
 		row++;
 	}
-	return (str);
+	return (string_concatenate);
 }
