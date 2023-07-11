@@ -67,9 +67,9 @@ return (0);
 return (word);
 }
 /**
- * strtow - splits a string into words
- * @str: input string to split
- * Return: pointer to new string
+ * strtow - function that splits a string
+ * @str: input string
+ * Return: splits a string into words
  */
 char **strtow(char *str)
 {
