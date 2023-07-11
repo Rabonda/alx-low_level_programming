@@ -33,11 +33,11 @@ char *argstostr(int ac, char **av)
 		col = 0;
 		while (av[row][col])
 		{
-			string_concatenate[k] = av[row][col];
+			string_concatenate[count] = av[row][col];
 			count++;
 			col++;
 		}
-		if (string_concatenate[k] == '\0')
+		if (string_concatenate[count] == '\0')
 			string_concatenate[count++] = '\n';
 
 		row++;
