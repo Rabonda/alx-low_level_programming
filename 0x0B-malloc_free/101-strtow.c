@@ -54,13 +54,15 @@ int word_count(char *str, int str_len)
 {
 int i = 0, words = 0;
 
-for (i = 0; i < str_len; i++)
+while (i < str_len)
 {
 if (str[i] != ' ')
 {
 while (str[i] != ' ' && i < str_len)
+i++;
 words++;
 }
+i++;
 }
 if (words == 0)
 return (0);
