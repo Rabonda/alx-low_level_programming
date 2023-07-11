@@ -57,7 +57,7 @@ for (row = 0; row < str_len; row++)
 {
 if (str[row] != ' ')
 {
-while (str[row] != ' ' && i < str_len)
+while (str[row] != ' ' && row < str_len)
 row++;
 word++;
 }
