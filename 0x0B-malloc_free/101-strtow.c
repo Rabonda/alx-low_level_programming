@@ -13,12 +13,12 @@ int strncat_mod(char *dest, char *src, int i, int str_len)
 {
 int count = 0;
 
-  while (src[i] != ' ' && i < str_len)
-  {
-    dest[count] = src[i];
-    i++, count++;
-  }
-  return (i);
+while (src[i] != ' ' && i < str_len)
+{
+dest[count] = src[i];
+i++, count++;
+}
+return (i);
 }
 /**
  * mallocmem - function that allocates memory and sets NULL at string.
@@ -29,39 +29,37 @@ int count = 0;
  */
 void mallocmem(char **newstr, char *str, int str_len)
 {
-  int row, x = 0, length = 1;
-  
-  for (row = 0; row < str_len; row++)
-  {
-    if (str[row] != ' ')
-    {
-      while (str[row] != ' ' && row < str_len)
-        row++, length++;
-      newstr[x] = malloc(sizeof(char) * length);
-      newstr[x][length] = '\0';
-      x++, length = 1;
-    }
-  }
+int row, x = 0, length = 1;
+
+for (row = 0; row < str_len; row++)
+{
+if (str[row] != ' ')
+{
+while (str[row] != ' ' && row < str_len)
+row++, length++;
+newstr[x] = malloc(sizeof(char) * length);
+newstr[x][length] = '\0';
+x++, length = 1;
+}
+}
 }
 /**
- * word_count - counts words in input string
- * @str: input string
+ * word_count - unction that counts words in a string
+ * @str: string variable
  * @str_len: string length
- * Return: 0 on failure, words on success
+ * Return: 0 code success
  */
 int word_count(char *str, int str_len)
 {
 int i = 0, words = 0;
 
-while (i < str_len)
+for (i = 0; i < str_len; i++)
 {
 if (str[i] != ' ')
 {
 while (str[i] != ' ' && i < str_len)
-i++;
 words++;
 }
-i++;
 }
 if (words == 0)
 return (0);
