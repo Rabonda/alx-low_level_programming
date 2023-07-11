@@ -1,42 +1,46 @@
 #include "main.h"
 #include <stdlib.h>
 /**
-  *argstostr - concatenates all arguments of the program.
+  *argstostr - function that concatenates all arguments of the program.
   *@ac: argument count.
   *@av: pointer to array of size ac.
-  *Return: NULL if ac == 0 or av == null, Pointer to new string.
-  *NULL on fail.
+  *Return: concatenates all arguments of the program.
   */
 char *argstostr(int ac, char **av)
 {
-	int i, n, k = 0, len = 0;
-	char *str;
+	int row, col, count = 0, length = 0;
+	char *string_concatenate;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	row = 0;
+	while (row < ac)
 	{
-		for (n = 0; av[i][n]; n++)
-			len++;
+		for (col = 0; av[row][col]; col++)
+			length++;
+		row++;
 	}
-	len += ac;
+	length = length + ac;
 
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
+	string_concatenate = malloc(sizeof(char) * length + 1);
+	if (string_concatenate == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	row = 0;
+	while (row < ac)
 	{
-		for (n = 0; av[i][n]; n++)
+		col = 0;
+		while (av[row][col])
 		{
-			str[k] = av[i][n];
-			k++;
+			string_concatenate[count] = av[row][col];
+			count++;
+			col++;
 		}
-		if (str[k] == '\0')
-		{
-			str[k++] = '\n';
-		}
+		if (string_concatenate[count] == '\0')
+			string_concatenate[count++] = '\n';
+
+		row++;
 	}
-	return (str);
+	return (string_concatenate);
 }
