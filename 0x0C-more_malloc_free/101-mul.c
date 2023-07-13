@@ -15,17 +15,18 @@ int _isdigit(int c)
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: the string whose length to check
+ * _strlen - function that returns the length of a string
+ * @s: the length of the string to be checked
  *
- * Return: integer length of string
+ * Return: returns the length of a string
  */
 int _strlen(char *s)
 {
-	int i = 0;
+	int i;
 
-	while (*s++)
-		i++;
+	for (i = 0; *s++; i++)
+		continue;
+
 	return (i);
 }
 
