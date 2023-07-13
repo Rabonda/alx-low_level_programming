@@ -4,14 +4,16 @@
 #include <string.h>
 
 /**
- * _isdigit - checks if character is digit
- * @c: the character to check
+ * _isdigit - Function that checks if character is digit
+ * @c: the character to be checked
  *
- * Return: 1 if digit, 0 otherwise
+ * Return: if character is digit (1 - digit or 0 - not digit)
  */
 int _isdigit(int c)
 {
-	return (c >= '0' && c <= '9');
+	int is_digit = (c >= '0' && c <= '9');
+
+	return is_digit;
 }
 
 /**
