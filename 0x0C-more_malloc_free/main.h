@@ -10,5 +10,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *argstostr(int ac, char **av);
 char **strtow(char *str);
 int find_len(char *str);
+char *create_xarray(int size);
 
 #endif
