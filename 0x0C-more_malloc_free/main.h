@@ -12,5 +12,6 @@ char **strtow(char *str);
 int find_len(char *str);
 char *create_xarray(int size);
 char *iterate_zeroes(char *str);
+int get_digit(char c);
 
 #endif
