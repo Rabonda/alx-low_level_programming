@@ -1,48 +1,49 @@
-
 #include "main.h"
 
 
 /**
- * find_len - Finds the length of a string.
- * @str: The string to be measured.
+ * find_len - Function that finds the length of a string.
+ * @str: The string variable to be measured.
  *
- * Return: The length of the string.
+ * Return: Returns the length of the string.
  */
 int find_len(char *str)
 {
-	int len = 0;
+	int str_len = 0;
 
 	while (*str++)
-		len++;
+		str_len += 1;
 
-	return (len);
+	return (str_len);
 }
 
 /**
- * create_xarray - Creates an array of chars and initializes it with
- *                 the character 'x'. Adds a terminating null byte.
+ * create_xarray - Function that creates an array of chars and initializes it with
+ * the character 'x'.
  * @size: The size of the array to be initialized.
  *
- * Description: If there is insufficient space, the
- *              function exits with a status of 98.
- * Return: A pointer to the array.
+ * Return: returns array of chars and initializes it with the character 'x'.
  */
 char *create_xarray(int size)
 {
-	char *array;
-	int index;
+	char *ar;
+	int i;
 
-	array = malloc(sizeof(char) * size);
+	ar = malloc(sizeof(char) * size);
 
-	if (array == NULL)
+	if (ar == NULL)
 		exit(98);
 
-	for (index = 0; index < (size - 1); index++)
-		array[index] = 'x';
+	i = 0;
+	while (i < (size - 1))
+	{
+		ar[i] = 'x';
+		i++;
+	}
 
-	array[index] = '\0';
+	ar[i] = '\0';
 
-	return (array);
+	return (ar);
 }
 
 /**
