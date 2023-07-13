@@ -1,48 +1,51 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * *string_nconcat - Function that concatenates variable bytes 
- * of a string to another string
- * @s1: string variable to append
- * @s2: string variable to concatenate
- * @n: number of bytes
- *
- * Return: returns pointer
+ * string_nconcat - A function that concatenates two strings
+ * @s1: The first string variable.
+ * @s2: The second string variable.
+ * @n: The maximum number of bytes.
+ * Return: returns the concatenated of two strings
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *words;
-	unsigned int row, col = 0, first_length, second_length;
+	char *string_concat;
+	unsigned int string_len = n, i;
 
-	for (first_length = 0; s1 && s1[first_length]; first_length++)
-		continue;
-		
-	for (second_length = 0; s2 && s2[second_length]; second_length++)
-		continue;
+	if (s1 == NULL)
+		s1 = "";
 
-	if (n > second_length)
-		words = malloc(sizeof(char) * (first_length + len2 + 1));
-	else
-		words = malloc(sizeof(char) * (first_length + n + 1));
+	if (s2 == NULL)
+		s2 = "";
 
-	if (words == '\0')
-		return (NULL);
-
-	row = 0;
-	while (row < first_length)
+	i = 0;
+	while (s1[i])
 	{
-		words[row] = s1[row];
-		row++;
+		string_len++;
+		i++;
 	}
 
-	while (n < second_length && row < (first_length + n))
-		words[row++] = s2[col++];
+	string_concat = malloc(sizeof(char) * (string_len + 1));
 
-	while (n >= second_length && row < (first_length + second_length))
-		words[row++] = s2[col++];
+	if (string_concat == NULL)
+		return (NULL);
 
-	words[row] = '\0';
+	string_len = 0;
+	i = 0;
+	while (s1[i])
+	{
+		string_concat[string_len++] = s1[i];
+		i++;
+	}
+	i = 0;
+	while (s2[i] && i < n)
+	{
+		string_concat[string_len++] = s2[i];
+		i++;
+	}
 
-	return (words);
+	string_concat[string_len] = '\0';
+
+	return (string_concat);
 }
