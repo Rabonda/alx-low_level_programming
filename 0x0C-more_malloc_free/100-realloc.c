@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 	{
 	for (col = 0; av[row][col]; col++)
 	{
-		arr_str[r] = av[row][col];
+		arr_str[col] = av[row][col];
 		count++;
 	}
 	if (arr_str[count] == '\0')
