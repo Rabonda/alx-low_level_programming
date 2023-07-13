@@ -11,14 +11,7 @@
  */
 int _isdigit(int c)
 {
-	int is_digit;
-
-	if (c >= '0' && c <= '9')
-		is_digit = 1;
-	else
-		is_digit = 0;
-
-	return is_digit;
+	return (c >= '0' && c <= '9');
 }
 
 /**
