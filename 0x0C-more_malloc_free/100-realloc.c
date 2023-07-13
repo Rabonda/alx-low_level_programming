@@ -7,35 +7,57 @@
  * @av: double pointer array.
  * Return: returns a memory block using malloc and free.
  */
-char *argstostr(int ac, char **av)
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * _realloc - function that reallocates a memory block
+ * using malloc and free.
+ * @ptr: pointer to be reallocated.
+ * @old_size: size of old memory.
+ * @new_size: size of new memory.
+ * Return: returns the reallocation of a memory block.
+ */
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	void *arr_memory;
+	char *copy, *f;
+	unsigned int x;
 
-	if (ac == 0 || av == NULL)
+	if (new_size == old_size)
+		return (ptr);
+
+	if (ptr == NULL)
+	{
+		arr_memory = malloc(new_size);
+
+		if (arr_memory == NULL)
+			return (NULL);
+
+		return (arr_memory);
+	}
+
+	if (new_size == 0 && ptr != NULL)
+	{
+		free(ptr);
 		return (NULL);
-
-	for (i = 0; i < ac; i++)
-	{
-		for (n = 0; av[i][n]; n++)
-			l++;
 	}
-	l += ac;
 
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
+	copy = ptr;
+	arr_memory = malloc(sizeof(*copy) * new_size);
+
+	if (arr_memory == NULL)
+	{
+		free(ptr);
 		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-	for (n = 0; av[i][n]; n++)
-	{
-		str[r] = av[i][n];
-		r++;
 	}
-	if (str[r] == '\0')
-	{
-		str[r++] = '\n';
-	}
-	}
-	return (str);
+
+	f = arr_memory;
+
+	for (x = 0; x < old_size && x < new_size; x++)
+		f[x] = *copy++;
+
+	free(ptr);
+	return (arr_memory);
 }
