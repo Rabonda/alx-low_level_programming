@@ -197,51 +197,35 @@ julien@ubuntu:~/0x0b. more malloc, free$
 -   Directory: `0x0C-more_malloc_free`
 -   File: `101-mul.c`
 
-#include <stdlib.h>
-#include "main.h"
-
-/**
- * *string_nconcat - Function that concatenates variable bytes 
- * of a string to another string
- * @s1: string variable to append
- * @s2: string variable to concatenate
- * @n: number of bytes
- *
- * Return: returns pointer
- */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *argstostr(int ac, char **av)
 {
-	char *words;
-	unsigned int row, col = 0, first_length, second_length;
+	int row, col, count = 0, len = 0;
+	char *arr_str;
 
-	for (first_length = 0; s1 && s1[first_length]; first_length++)
-		continue;
-		
-	for (second_length = 0; s2 && s2[second_length]; second_length++)
-		continue;
-
-	if (n > second_length)
-		words = malloc(sizeof(char) * (first_length + second_length + 1));
-	else
-		words = malloc(sizeof(char) * (first_length + n + 1));
-
-	if (words == '\0')
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	row = 0;
-	while (row < first_length)
+	for (row = 0; row < ac; row++)
 	{
-		words[row] = s1[row];
-		row++;
+		for (col = 0; av[row][col]; col++)
+			row++;
 	}
+	len += ac;
 
-	while (n < second_length && row < (first_length + n))
-		words[row++] = s2[col++];
-
-	while (n >= second_length && row < (first_length + second_length))
-		words[row++] = s2[col++];
-
-	words[row] = '\0';
-
-	return (words);
+	arr_str = malloc(sizeof(char) * len + 1);
+	if (arr_str == NULL)
+		return (NULL);
+	for (row = 0; row < ac; row++)
+	{
+	for (col = 0; av[row][col]; col++)
+	{
+		arr_str[col] = av[row][col];
+		count++;
+	}
+	if (arr_str[count] == '\0')
+	{
+		arr_str[count++] = '\n';
+	}
+	}
+	return (arr_str);
 }
