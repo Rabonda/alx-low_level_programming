@@ -30,53 +30,53 @@ int _strlen(char *s)
 }
 
 /**
- * big_multiply - multiply two big number strings
- * @s1: the first big number string
- * @s2: the second big number string
+ * big_multiply - Function that multiply two string number.
+ * @s1: the first string number.
+ * @s2: the second string number.
  *
- * Return: the product big number string
+ * Return: returns the multiply two string number.
  */
 char *big_multiply(char *s1, char *s2)
 {
-	char *r;
-	int l1, l2, a, b, c, x;
+	char *letter;
+	int letter_1, letter_2, w, y, z, x;
 
-	l1 = _strlen(s1);
-	l2 = _strlen(s2);
-	r = malloc(a = x = l1 + l2);
-	if (!r)
+	letter_1 = _strlen(s1);
+	letter_2 = _strlen(s2);
+	letter = malloc(w = x = letter_1 + letter_2);
+	if (!letter)
 		printf("Error\n"), exit(98);
-	while (a--)
-		r[a] = 0;
+	while (w--)
+		letter[w] = 0;
 
-	for (l1--; l1 >= 0; l1--)
+	for (letter_1--; letter_1 >= 0; letter_1--)
 	{
-		if (!_isdigit(s1[l1]))
+		if (!_isdigit(s1[letter_1]))
 		{
-			free(r);
+			free(letter);
 			printf("Error\n"), exit(98);
 		}
-		a = s1[l1] - '0';
-		c = 0;
+		w = s1[letter_1] - '0';
+		z = 0;
 
-		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
+		for (letter_2 = _strlen(s2) - 1; letter_2 >= 0; letter_2--)
 		{
-			if (!_isdigit(s2[l2]))
+			if (!_isdigit(s2[letter_2]))
 			{
-				free(r);
+				free(letter);
 				printf("Error\n"), exit(98);
 			}
-			b = s2[l2] - '0';
+			y = s2[letter_2] - '0';
 
-			c += r[l1 + l2 + 1] + (a * b);
-			r[l1 + l2 + 1] = c % 10;
+			z += letter[letter_1 + letter_2 + 1] + (w * y);
+			letter[letter_1 + letter_2 + 1] = z % 10;
 
-			c /= 10;
+			z /= 10;
 		}
-		if (c)
-			r[l1 + l2 + 1] += c;
+		if (z)
+			letter[letter_1 + letter_2 + 1] += z;
 	}
-	return (r);
+	return (letter);
 }
 
 
