@@ -1,40 +1,41 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * argstostr - function that reallocates a memory
+ * block using malloc and free.
+ * @ac: integer input variable.
+ * @av: double pointer array.
+ * Return: returns a memory block using malloc and free.
  */
 char *argstostr(int ac, char **av)
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	int row, col, count = 0, len = 0;
+	char *arr_str;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	for (row = 0; row < ac; row++)
 	{
-		for (n = 0; av[i][n]; n++)
-			l++;
+		for (col = 0; av[row][col]; col++)
+			row++;
 	}
-	l += ac;
+	len += ac;
 
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
+	arr_str = malloc(sizeof(char) * len + 1);
+	if (arr_str == NULL)
 		return (NULL);
-	for (i = 0; i < ac; i++)
+	for (row = 0; row < ac; row++)
 	{
-	for (n = 0; av[i][n]; n++)
+	for (col = 0; av[row][col]; col++)
 	{
-		str[r] = av[i][n];
-		r++;
+		arr_str[r] = av[row][col];
+		count++;
 	}
-	if (str[r] == '\0')
+	if (arr_str[count] == '\0')
 	{
-		str[r++] = '\n';
+		arr_str[count++] = '\n';
 	}
 	}
-	return (str);
+	return (arr_str);
 }
