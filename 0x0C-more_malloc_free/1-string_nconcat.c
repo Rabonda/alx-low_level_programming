@@ -22,7 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		continue;
 
 	if (n > second_length)
-		words = malloc(sizeof(char) * (first_length + len2 + 1));
+		words = malloc(sizeof(char) * (first_length + second_length + 1));
 	else
 		words = malloc(sizeof(char) * (first_length + n + 1));
 
