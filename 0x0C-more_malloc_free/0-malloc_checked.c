@@ -6,13 +6,11 @@
  * @b: unsigned integer variable
  * Return: returns the pointer to the allocated memory or NULL
  */
-
 void *malloc_checked(unsigned int b)
 {
-	int *memory = malloc(b);
-
-	if (memory != 0)
-		return (memory);
-	else
-		exit(98);
+int *memory = malloc(b);
+if (memory != 0)
+return (memory);
+else
+exit(98);
 }
