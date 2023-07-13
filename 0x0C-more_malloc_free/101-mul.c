@@ -1,40 +1,47 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
+
+#define ERR_MSG "Error"
+
+int _isdigit(char *s);
+
 /**
- * argstostr - main entry
- * @ac: int input
- * @av: double pointer array
- * Return: 0
+ * main - takes two numbers as arguments and outputs the product.
+ * @argc: the number of arguments including name of program.
+ * @argv: an array of arguments
+ *
+ * Return: 0 if successful.
  */
-char *argstostr(int ac, char **av)
+int main(int argc, char *argv[])
 {
-	int i, n, r = 0, l = 0;
-	char *str;
+	int i;
+	if (argc != 3)
+	{
+		for (i = 0; ERR_MSG[i] != '\0'; i++)
+			_putchar(ERR_MSG[i]);
+		_putchar(10);
+		exit(98);
+	}
+	if (_isdigit(argv[1]) == 0)
+		printf("%s\n", argv[1]);
+		
+	return (0);
+}
 
-	if (ac == 0 || av == NULL)
-		return (NULL);
+/**
+ * isdigit - checks if string is a number or not
+ * @s: the string to be checked
+ *
+ * Return: 1 if true, else 0.
+ */
 
-	for (i = 0; i < ac; i++)
+int _isdigit(char *s)
+{
+	while (*s)
 	{
-		for (n = 0; av[i][n]; n++)
-			l++;
+		if (*s < 48 || *s > 57)
+			return (1);
+		s++;
 	}
-	l += ac;
-
-	str = malloc(sizeof(char) * l + 1);
-	if (str == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-	for (n = 0; av[i][n]; n++)
-	{
-		str[r] = av[i][n];
-		r++;
-	}
-	if (str[r] == '\0')
-	{
-		str[r++] = '\n';
-	}
-	}
-	return (str);
+	return (0);
 }
