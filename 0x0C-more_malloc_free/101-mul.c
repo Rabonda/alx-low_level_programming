@@ -1,59 +1,40 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
- * _atoi - Converts a character array to an integer
- * @s: character array to convert
- * Return: returns integer from array, returns 0 if none found
+ * argstostr - main entry
+ * @ac: int input
+ * @av: double pointer array
+ * Return: 0
  */
+char *argstostr(int ac, char **av)
+{
+	int i, n, r = 0, l = 0;
+	char *str;
 
-int _atoi(char *s)
-{
-int retval, i, neg;
-i = 0;
-retval = 0;
-neg = -1;
-while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
-{
-if (s[i] == '-')
-neg *= -1;
-i++;
-}
-while (s[i] != '\0' && (s[i] >= '0' && s[i] <= '9'))
-retval = (retval * 10) - (s[i++] - '0');
-return (retval *neg);
-}
+	if (ac == 0 || av == NULL)
+		return (NULL);
 
-/**
- * main - multiplies two positive numbers
- * @argc: n arguments
- * @argv: args
- * Return: int
- */
+	for (i = 0; i < ac; i++)
+	{
+		for (n = 0; av[i][n]; n++)
+			l++;
+	}
+	l += ac;
 
-int main(int argc, char *argv[])
-{
-int a, b, i, j;
-unsigned long mul;
-if (argc != 3)
-{
-printf("Error\n");
-exit(98);
-}
-for (i = 1; i < argc; i++)
-{
-for (j = 0; argv[i][j] != '\0'; j++)
-{
-if (argv[i][j] > 57 || argv[i][j] < 48)
-{
-printf("Error\n");
-exit(98);
-}
-}
-}
-a = _atoi(argv[1]);
-b = _atoi(argv[2]);
-mul = a *b;
-printf("%lu\n", mul);
-return (0);
+	str = malloc(sizeof(char) * l + 1);
+	if (str == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+	for (n = 0; av[i][n]; n++)
+	{
+		str[r] = av[i][n];
+		r++;
+	}
+	if (str[r] == '\0')
+	{
+		str[r++] = '\n';
+	}
+	}
+	return (str);
 }
