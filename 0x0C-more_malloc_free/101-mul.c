@@ -101,7 +101,7 @@ int main(int argc, char **argv)
 	w = 0;
 	for (y = 0; y < x; y += 1)
 	{
-		if (r[y])
+		if (arr[y])
 			w = 1;
 		if (w)
 			_putchar(arr[y] + '0');
