@@ -46,8 +46,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	f = arr_memory;
 
-	for (x = 0; x < old_size && x < new_size; x++)
+	x = 0;
+	while (x < old_size && x < new_size)
+	{
 		f[x] = *copy++;
+		x++;
+	}
 
 	free(ptr);
 	return (arr_memory);
