@@ -32,18 +32,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	length = 0;
-	i = 0;
-	while (s1[i])
-	{
+	for (i = 0; s1[i]; i++)
 		concatenate[length++] = s1[i];
-		i++;
-	}
-	i = 0;
-	while (s2[i] && i < n)
-	{
+
+	for (i = 0; s2[i] && i < n; i++)
 		concatenate[length++] = s2[i];
-		i++;
-	}
 
 	concatenate[length] = '\0';
 
