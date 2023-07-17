@@ -26,25 +26,25 @@ char *_strdup(char *str)
 }
 
 /**
- * new_dog - instantiates a dawg
+ * new_dog - function that instantiates a dawg
  * @name: the dawgy name
  * @age: the dawgy age
  * @owner: the dawgy owner
  *
- * Return: pointer to new dawg.
+ * Return: returns the pointer to new dawg.
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *d = malloc(sizeof(dog_t));
+	dog_t *my_dog = malloc(sizeof(dog_t));
 
-	if (!d)
+	if (!my_dog)
 		return (NULL);
-	d->name = _strdup(name);
-	if (name && !d->name)
-		return (free(d), NULL);
-	d->owner = _strdup(owner);
-	if (owner && !d->owner)
-		return (free(d->name), free(d), NULL);
-	d->age = age;
-	return (d);
+	my_dog->name = _strdup(name);
+	if (name && !my_dog->name)
+		return (free(my_dog), NULL);
+	my_dog->owner = _strdup(owner);
+	if (owner && !my_dog->owner)
+		return (free(my_dog->name), free(my_dog), NULL);
+	my_dog->age = age;
+	return (my_dog);
 }
