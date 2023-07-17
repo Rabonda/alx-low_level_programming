@@ -2,26 +2,27 @@
 #include <stdlib.h>
 
 /**
- * _strdup - duplicates a string
- * @str: the string to duplicate
+ * _strdup - function that duplicates a string
+ * @str: variable to be duplicated
  *
- * Return: pointer to the duplicated string
+ * Return: returns the pointer to the duplicated string
  */
 char *_strdup(char *str)
 {
-	int length = 0;
-	char *ret;
+	int string_length = 0;
+	char *dup;
 
 	if (str == NULL)
 		return (NULL);
-	while (*str++)
-		length++;
-	ret = malloc(sizeof(char) * (length + 1));
-	if (!ret)
+	for (; *str++; string_length++)
+		continue;
+
+	dup = malloc(sizeof(char) * (string_length + 1));
+	if (!dup)
 		return (NULL);
-	for (length++; length--;)
-		ret[length] = *--str;
-	return (ret);
+	for (string_length++; string_length--;)
+		dup[string_length] = *--str;
+	return (dup);
 }
 
 /**
