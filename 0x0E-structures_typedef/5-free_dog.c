@@ -3,7 +3,7 @@
 /**
 *free_dog - function that Frees dog
 *@d: dog to be freed
-*void: Frees dog
+*return: void Frees dog
 */
 void free_dog(dog_t *d)
 {
