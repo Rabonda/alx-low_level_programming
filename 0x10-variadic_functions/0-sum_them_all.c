@@ -13,18 +13,15 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list l
-	unsigned int row;
-	int total = 0;
+	unsigned int row, total = 0;
 
-	if (n == 0)
-		return (0);
 	va_start(l, n);
-  row = 0;
+  	row = 0;
 	while (row < n)
-  {
+  	{
 		total = total + va_arg(l, int);
-    row += 1;
-  }
-  va_end(l);
-  return (total);
+    		row += 1;
+  	}
+  	va_end(l);
+  	return (total);
 }
