@@ -25,5 +25,4 @@ while (ops[index].op != NULL && *(ops[index].op) != *s)
 index++;
 
 return (ops[index].f);
-
 }
