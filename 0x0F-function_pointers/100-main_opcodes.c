@@ -24,8 +24,9 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
+	int byte = atoi(argv[1]);
 
-	while (atoi(argv[1])--)
-		printf("%02hhx%s", *p++, atoi(argv[1]) ? " " : "\n");
+	while (byte--)
+		printf("%02hhx%s", *p++, byte ? " " : "\n");
 	return (0);
 }
