@@ -3,24 +3,31 @@
 #include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * main - a program that prints the opcodes
+ * of its own main function.
  * @argc: the number of args
  * @argv: argument vector
  *
- * Return: Always 0.
+ * Return: returns opcodes of its own main function.
  */
 int main(int argc, char **argv)
 {
 	char *p = (char *)main;
-	int b;
+	int bytes;
 
 	if (argc != 2)
-		printf("Error\n"), exit(1);
-	b = atoi(argv[1]);
-	if (b < 0)
-		printf("Error\n"), exit(2);
+	{
+		printf("Error\n")
+		exit(1);
+	}
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
+	{
+		printf("Error\n")
+		exit(2);
+	}
 
-	while (b--)
+	while (bytes--)
 		printf("%02hhx%s", *p++, b ? " " : "\n");
 	return (0);
 }
