@@ -15,8 +15,9 @@ return;
 else if (action == NULL)
 return;
 
-for ( ;size-- >= 1; array++)
+while (size-- >= 1)
 {
 action(*array);
+array++;
 }
 }
