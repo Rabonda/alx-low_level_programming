@@ -15,7 +15,7 @@ return;
 else if (action == NULL)
 return;
 
-for (;size-- >= 1; array++)
+for ( ;size-- >= 1; array++)
 {
 action(*array);
 }
