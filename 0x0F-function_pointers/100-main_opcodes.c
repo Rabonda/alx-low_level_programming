@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-	while (atoi(argv[1])--)
+	while ((atoi(argv[1]))--)
 	{
 		printf("%02hhx%s", *p++, b ? " " : "\n");
 	}
