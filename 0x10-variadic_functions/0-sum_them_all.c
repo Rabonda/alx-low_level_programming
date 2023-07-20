@@ -13,7 +13,8 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	va_list l
-	unsigned int row, total = 0;
+	unsigned int row;
+	int total = 0;
 
 	va_start(l, n);
   	row = 0;
