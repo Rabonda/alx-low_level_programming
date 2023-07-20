@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
-	else if (b < 0)
+	if (b < 0)
 	{
 		printf("Error\n");
 		exit(2);
