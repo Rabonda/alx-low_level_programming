@@ -13,8 +13,8 @@ int main(int argc, char *argv[])
 {
 
 int i, b;
-int (*address)(int, char **) = main;
-unsigned char opcode;
+int (*a)(int, char **) = main;
+unsigned char op_code;
 
 if (argc != 2)
 {
@@ -24,7 +24,7 @@ exit(1);
 
 b = atoi(argv[1]);
 
-if (bytes < 0)
+if (b < 0)
 {
 printf("Error\n");
 exit(2);
@@ -33,13 +33,13 @@ exit(2);
 i = 0;
 while (i < b)
 {
-opcode = *(unsigned char *)address;
-printf("%.2x", opcode);
+op_code = *(unsigned char *)a;
+printf("%.2x", op_code);
 
 if (i == b - 1)
 continue;
 printf(" ");
-address++;
+a++;
 
 i++;
 }
