@@ -13,7 +13,6 @@ int op_add(int a, int b)
 return a + b;
 }
 
-
 /**
 *op_sub - function that substracts two variables.
 *@a:The first variable.
