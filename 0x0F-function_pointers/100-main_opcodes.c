@@ -13,21 +13,21 @@
 int main(int argc, char **argv)
 {
 	char *p = (char *)main;
-	int bytes;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
-	bytes = atoi(argv[1]);
-	if (bytes < 0)
+	else if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	while (bytes--)
+	while (atoi(argv[1])--)
+	{
 		printf("%02hhx%s", *p++, b ? " " : "\n");
+	}
 	return (0);
 }
