@@ -12,4 +12,5 @@ if (name != NULL)
 f(name);
 else if (f != NULL)
 f(name);
+return;
 }
