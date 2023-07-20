@@ -25,7 +25,9 @@ return (add);
 */
 int op_sub(int a, int b)
 {
-return (a - b);
+int subtract = a - b;
+
+return (subtract);
 }
 
 /**
