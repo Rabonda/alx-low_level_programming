@@ -10,7 +10,9 @@
 
 int op_add(int a, int b)
 {
-return (a + b);
+int add = a + b;
+  
+return (add);
 }
 
 /**
