@@ -10,7 +10,6 @@
 */
 int (*get_op_func(char *s))(int, int)
 {
-int index = 0;
 
 op_t ops[] = {
 {"+", op_add},
@@ -20,6 +19,7 @@ op_t ops[] = {
 {"%", op_mod},
 {NULL, NULL}
 };
+int index = 0;
 
 while (ops[index].op != NULL && *(ops[index].op) != *s)
 index++;
