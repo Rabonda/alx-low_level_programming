@@ -20,9 +20,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(1);
 	}
-
-	b = atoi(argv[1]);
-	if (b < 0)
+	else if (atoi(argv[1])< 0)
 	{
 		printf("Error\n");
 		exit(2);
