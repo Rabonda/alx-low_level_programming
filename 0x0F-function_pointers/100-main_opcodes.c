@@ -13,7 +13,6 @@
 int main(int argc, char **argv)
 {
 	char *p = (char *)main;
-	int b;
 
 	if (argc != 2)
 	{
@@ -27,6 +26,6 @@ int main(int argc, char **argv)
 	}
 
 	while (atoi(argv[1])--)
-		printf("%02hhx%s", *p++, b ? " " : "\n");
+		printf("%02hhx%s", *p++, atoi(argv[1]) ? " " : "\n");
 	return (0);
 }
