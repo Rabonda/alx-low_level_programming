@@ -15,15 +15,9 @@ int main(int argc, char **argv)
 	char *p = (char *)main;
 
 	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
+		printf("Error\n"), exit(1);
 	else if (atoi(argv[1]) < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
+		printf("Error\n"), exit(2);
 
 	while ((atoi(argv[1]))--)
 	{
