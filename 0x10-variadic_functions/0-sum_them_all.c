@@ -19,7 +19,7 @@ unsigned int index;
 va_start(total, n);
 
 index = 0;
-while ( index < n)
+while (index < n)
 {
 total += va_arg(l, int);
 index += 1;
