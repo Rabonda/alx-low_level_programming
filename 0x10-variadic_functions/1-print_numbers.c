@@ -6,7 +6,7 @@
 *@separator: string variable to be printed.
 *@n: number of integer.
 *
-*VOID: prints numbers.
+*return: prints numbers.
 */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
