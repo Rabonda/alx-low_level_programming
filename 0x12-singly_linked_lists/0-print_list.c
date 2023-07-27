@@ -2,7 +2,6 @@
 
 /**
 *print_list - function that prints all the elements of a list.
-*
 * @h: list parameter.
 *
 * Return: returns the number of nodes.
