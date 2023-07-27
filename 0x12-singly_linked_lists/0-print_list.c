@@ -1,12 +1,12 @@
 #include "lists.h"
-
 /**
 *print_list - function that prints all the elements of a list.
-* @h: list parameter.
+*@h: list parameter.
 *
-* Return: returns the number of nodes.
+*Return: returns the number of nodes.
 */
-size_t print_list(const list_t *h) {
+size_t print_list(const list_t *h)
+{
     size_t index;
 
     index = 0;
