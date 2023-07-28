@@ -29,6 +29,10 @@ These are all the tasks of this project, the ones that are completed link to the
   - Return: the address of the new element, or NULL if it failed
   - str needs to be duplicated
   - You are allowed to use strdup
+
+### [4. Free list](./4-free_list.c)
+* Write a function that frees a list_t list.
+- Prototype: void free_list(list_t *head);
 ---
 
 ### Author
