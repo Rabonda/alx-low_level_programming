@@ -18,7 +18,7 @@ temporary_location = malloc(sizeof(list_t));
 if (temporary_location == NULL)
 return (NULL);
 
-for (length =0; str[length]; length++)
+for (length = 0; str[length]; length++)
 continue;
 
 temporary_location->len = length;
