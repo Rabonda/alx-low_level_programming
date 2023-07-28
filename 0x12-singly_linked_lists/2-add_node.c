@@ -11,19 +11,19 @@
 */
 list_t *add_node(list_t **head, const char *str)
 {
-    list_t *temporary_location;
-    int length;
+list_t *temporary_location;
+int length;
 
-    temporary_location = malloc(sizeof(list_t));
-    if (temporary_location == NULL)
-    return (NULL);
+temporary_location = malloc(sizeof(list_t));
+if (temporary_location == NULL)
+return (NULL);
 
-    for (length =0; str[length]; length++)
-        continue;
+for (length =0; str[length]; length++)
+continue;
 
-    temporary_location->len = length;
-    temporary_location->str = strdup(str);
-    temporary_location->next = *head;
-    *head = temporary_location;
-    return (temporary_location);
+temporary_location->len = length;
+temporary_location->str = strdup(str);
+temporary_location->next = *head;
+*head = temporary_location;
+return (temporary_location);
 }
