@@ -14,13 +14,11 @@ include "lists.h"
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	unsigned int count;
-	listint_t *current_location, *subsequent;
+	unsigned int x;
+	listint_t *current_location, *subs;
 
 	if (!head || !*head)
-	{
 		return (-1);
-	}
 	current_location = *head;
 	if (index == 0)
 	{
@@ -28,16 +26,16 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		free(current_location);
 		return (1);
 	}
-	count = 0;
-	while (count < (index - 1))
+	x = 0;
+	while (x < (index - 1))
 	{
 		current_location = current_location->next;
-		if (!current_location)
+		if (current_location)
 			return (-1);
-		count++;
+		x++;
 	}
-	subsequent = current_location->next;
-	current_location->next = subsequent->next;
-	free(subsequent);
+	subs = current_location->next;
+	current_location->next = subs->next;
+	free(subs);
 	return (1);
 }
