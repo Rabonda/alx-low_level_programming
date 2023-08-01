@@ -38,7 +38,7 @@ count++;
 
 current_location = temporary->next;
 temporary->next = current_location->next;
-free(current_location);
+free (current_location);
 
 return (1);
 }
