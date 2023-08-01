@@ -9,19 +9,18 @@
   */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-unsigned int count = 0;
+unsigned int count;
 listint_t *node;
 
 if (!head)
 return (NULL);
 
 node = head;
-while (count < index)
+for (count = 0; count < index; count++)
 {
 if (!node)
 return (NULL);
 node = node->next;
-count++;
 }
 return (node);
 }
