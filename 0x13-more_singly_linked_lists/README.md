@@ -26,6 +26,9 @@ These are all the tasks of this project, the ones that are completed link to the
 ### [4. Free list](./4-free_list.c)
 * Write a function that frees a listint_t list.
 * Prototype: void free_listint(listint_t *head);
+### [4. Free list](./4-free_list.c)
+* Write a function that frees a listint_t list.
+* Prototype: void free_listint(listint_t *head);
 ---
 
 ### Author
