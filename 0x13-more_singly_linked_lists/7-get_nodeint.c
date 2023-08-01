@@ -9,7 +9,7 @@
   */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-unsigned int count;
+unsigned int count = 0;
 listint_t *node;
 
 if (!head)
