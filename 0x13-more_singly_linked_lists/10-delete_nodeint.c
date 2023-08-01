@@ -41,5 +41,5 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	temporary->next = current_location->next;
 	free(current_location);
 
-	return(1);
+	return (1);
 }
