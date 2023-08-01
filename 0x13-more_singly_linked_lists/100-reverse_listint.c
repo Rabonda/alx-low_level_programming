@@ -1,38 +1,45 @@
-listint_t *temp, *pre;
+#include "lists.h"
+/**
+  * reverse_listint - a function that reverses a listint_t linked list.
+  * @head: describe argument.
+  * Return: reverses a listint_t linked list.
+  */
+listint_t *reverse_listint(listint_t **head)
+{
+	listint_t *t, *p;
 
-	if (!head || !(*head))
-	{
+	if (!head || !*head)
 		return (NULL);
-	}
 
-	if (!(*head)->next)
-	{
+	if (!*head->next)
 		return (*head);
-	}
-	temp = *head;
-	pre = NULL;
+
+	t = *head;
+	p = NULL;
 	while (1)
 	{
-		if (!pre)
+		if (p == NULL)
 		{
-			pre = *head;
-			temp = temp->next;
-			pre->next = NULL;
-			*head = pre;
+			p = *head;
+			t = t->next;
+			p->next = NULL;
+			*head = p;
 		}
 		else
 		{
-			pre = temp;
-			temp = temp->next;
-			pre->next = *head;
-			if (!temp)
+			p = t;
+			t = t->next;
+			p->next = *head;
+			if (t == NULL)
 			{
-				temp = pre;
+				t = p;
 				break;
 			}
-			*head = pre;
+			*head = p;
 		}
 	}
-	*head = temp;
+	*head = t;
 
 	return (*head);
+
+}
