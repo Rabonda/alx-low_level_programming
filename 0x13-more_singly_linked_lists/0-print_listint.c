@@ -11,7 +11,7 @@ size_t print_listint(const listint_t *h)
 	size_t index;
 
 	index = 0;
-	
+
 	if (!h)
 		return (0);
 
