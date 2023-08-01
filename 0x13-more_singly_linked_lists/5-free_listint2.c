@@ -14,9 +14,11 @@ void free_listint2(listint_t **head)
 		return;
 	}
 
-	for (current_location = *head; current_location != NULL; current_location->next)
+	current_location = *head;
+	for (current_location != NULL)
 	{
 		temporary = current_location;
+		cureent = current_location->next;
 		free(temporary);
 	}
 	*head = NULL;
