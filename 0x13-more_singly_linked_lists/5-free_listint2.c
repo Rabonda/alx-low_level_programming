@@ -11,12 +11,12 @@ void free_listint2(listint_t **head)
 
 	if (!head)
 	{
-		return (0);
+		return;
 	}
 
 	for (current_location = *head; current_location != NULL; current_location->next)
 	{
-	    temporary = current_location;
+		temporary = current_location;
 		free(temporary);
 	}
 	*head = NULL;
