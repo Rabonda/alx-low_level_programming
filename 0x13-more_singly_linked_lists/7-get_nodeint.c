@@ -16,7 +16,7 @@ if (!head)
 return (NULL);
 
 node = head;
-for (count = 0; count < index; count++)
+for (count; count < index; count++)
 {
 if (!node)
 return (NULL);
