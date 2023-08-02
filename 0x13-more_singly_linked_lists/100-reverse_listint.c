@@ -40,7 +40,7 @@ listint_t *reverse_recur(listint_t *first, listint_t *second)
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	if (!head|| !*head)
+	if (!head || !*head)
 		return (NULL);
 
 	*head = reverse_recur(*head, NULL);
