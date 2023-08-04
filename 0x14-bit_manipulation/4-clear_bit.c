@@ -9,16 +9,15 @@
  * Return: 1 if code successful, or -1 if code is unsuccessful
  */
 int clear_bit(unsigned long int *n, unsigned int index)
-
 {
-	int sum;
+int sum;
 
-	if (index > 63)
-		return (-1);
-  else
-  {
-    sum = 1 << index;
-    *n = *n & (~sum);
-    return (1);
-  }
+if (index > 63)
+return (-1);
+else
+{
+sum = 1 << index;
+*n = *n & (~sum);
+return (1);
+}
 }
