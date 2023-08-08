@@ -66,7 +66,7 @@ else
 t = ptr[17];
 
 printf("  Type:                              ");
-switch (t)
+switch(t)
 {
 case 0:
 printf("NONE (No file type)\n");
@@ -98,7 +98,7 @@ void print_osabi(char *ptr)
 char osabi = ptr[7];
 printf("  OS/ABI:                            ");
 
-switch (osabi)
+switch(osabi)
 {
 case 0:
 printf("UNIX - System V\n");
