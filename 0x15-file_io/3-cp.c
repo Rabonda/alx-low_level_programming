@@ -2,131 +2,71 @@
 #include <stdio.h>
 
 /**
- * from_to - function that reads from and writes to copy.
- * @cpy: struct
+ * error_file - checks if files can be opened.
+ * @file_from: file_from.
+ * @file_to: file_to.
+ * @argv: arguments vector.
+ * Return: no return.
  */
-
-void from_to(copy_struct *cpy)
+void error_file(int file_from, int file_to, char *argv[])
 {
-
-	for (cpy->rd = 1; cpy->rd; cpy->rd = read(cpy->from_file, cpy->buffer, 1204))
-	{
-		if (cpy->rd < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", cpy->from);
-			exit(98);
-		}
-		cpy->wt = write(cpy->to_file, cpy->buffer, cpy->rd);
-		if (cpy->wt < 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", cpy->to);
-			exit(99);
-		}
-	}
-}
-
-/**
- * file_copy - function that copies one file to another.
- * @cpy: struct
- */
-
-void file_copy(copy_struct *cpy)
-{
-	cpy->from_file = open(cpy->from, O_RDONLY);
-
-	if (cpy->from_file < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", cpy->from);
-		exit(98);
-	}
-
-	cpy->to_file = open(cpy->to, O_CREAT | O_WRONLY | O_TRUNC,
-			S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-
-	if (cpy->to_file < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", cpy->to);
-		exit(99);
-	}
-
-	from_to(cpy);
-
-	cpy->wt = close(cpy->from_file);
-	if (cpy->wt < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cpy->from_file);
-		exit(100);
-	}
-
-	cpy->wt = close(cpy->to_file);
-	if (cpy->wt < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", cpy->to_file);
-		exit(100);
-	}
-
-}
-
-/**
- * init_struct - function that initializes copy struct
- * @cpy: struct
- * @argv: arguments to put into struct
- */
-
-void init_struct(copy_struct *cpy, char **argv)
-{
-	if (!cpy)
-		return;
-
-	if (!argv)
-		return;
-
-	cpy->from = argv[1];
-	cpy->to = argv[2];
-	cpy->buffer = malloc(sizeof(char) * 1204);
-
-	if (!(cpy->buffer))
-		exit(-1);
-}
-
-/**
- * main - main function.
- * @argc: a
- * @argv: arguments to put into struct.
- *
- * Return: 0 code success.
- */
-
-int main(int argc, char **argv)
-{
-	copy_struct *cp_command;
-
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-
-	if (!argv[1])
+	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
-	if (!argv[2])
+	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
+}
 
-	cp_command = malloc(sizeof(copy_struct));
+/**
+ * main - check the code for Holberton School students.
+ * @argc: number of arguments.
+ * @argv: arguments vector.
+ * Return: Always 0.
+ */
+int main(int argc, char *argv[])
+{
+	int file_from, file_to, err_close;
+	ssize_t nchars, nwr;
+	char buf[1024];
 
-	if (!cp_command)
-		return (0);
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
+		exit(97);
+	}
 
-	init_struct(cp_command, argv);
+	file_from = open(argv[1], O_RDONLY);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
+	error_file(file_from, file_to, argv);
 
-	file_copy(cp_command);
+	nchars = 1024;
+	while (nchars == 1024)
+	{
+		nchars = read(file_from, buf, 1024);
+		if (nchars == -1)
+			error_file(-1, 0, argv);
+		nwr = write(file_to, buf, nchars);
+		if (nwr == -1)
+			error_file(0, -1, argv);
+	}
 
+	err_close = close(file_from);
+	if (err_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
+
+	err_close = close(file_to);
+	if (err_close == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
+		exit(100);
+	}
 	return (0);
 }
