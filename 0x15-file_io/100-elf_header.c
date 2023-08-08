@@ -85,27 +85,22 @@ void print_class(unsigned char *e_ident)
 }
 
 /**
- * print_data - Prints the data of an ELF header.
+ * print_data - function that prints the data of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
+ * void: prints the data of an ELF header.
  */
 void print_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
 
-	switch (e_ident[EI_DATA])
-	{
-	case ELFDATANONE:
+	if (e_ident[EI_DATA] == ELFDATANONE)
 		printf("none\n");
-		break;
-	case ELFDATA2LSB:
+	else if (e_ident[EI_DATA] == ELFDATA2LSB)
 		printf("2's complement, little endian\n");
-		break;
-	case ELFDATA2MSB:
+	else if (e_ident[EI_DATA] == ELFDATA2MSB)
 		printf("2's complement, big endian\n");
-		break;
-	default:
+	else
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
-	}
 }
 
 /**
