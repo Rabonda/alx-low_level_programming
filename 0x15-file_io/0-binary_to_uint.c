@@ -1,7 +1,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdlib.h>
-#include <main.h>
+#include "main.h"
 
 /**
  * read_textfile - function that converts a binary number to
