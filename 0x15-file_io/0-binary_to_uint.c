@@ -1,6 +1,3 @@
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -16,34 +13,28 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int file;
-	int str_length, wchars;
-	char *bufer;
+	int fd;
+	ssize_t nrd, nwr;
+	char *buf;
 
-	if (!filename || letters == 0)
-		return (0);
-	bufer = malloc(sizeof(char) * (letters));
-	if (!bufer)
+	if (!filename)
 		return (0);
 
-	file = open(filename, O_RDONLY);
-	if (file == -1)
-	{
-		free(bufer);
-		return (0);
-	}
-	str_length = read(file, bufer, letters);
-	if (str_length == -1)
-	{
-		free(bufer);
-		close(file);
-		return (0);
-	}
+	fd = open(filename, O_RDONLY);
 
-	wchars = write(STDOUT_FILENO, bufer, str_length);
-	free(bufer);
-	close(file);
-	if (wchars != str_length)
+	if (fd == -1)
 		return (0);
-	return (str_length);
+
+	buf = malloc(sizeof(char) * (letters));
+	if (!buf)
+		return (0);
+
+	nrd = read(fd, buf, letters);
+	nwr = write(STDOUT_FILENO, buf, nrd);
+
+	close(fd);
+
+	free(buf);
+
+	return (nwr);
 }
