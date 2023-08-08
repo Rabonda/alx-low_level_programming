@@ -118,48 +118,36 @@ else
 printf("\n");
 }
 /**
- * print_osabi - Prints the OS/ABI of an ELF header.
+ * print_osabi - function that prints the OS/ABI of an ELF header.
  * @e_ident: A pointer to an array containing the ELF version.
+ * void: prints the OS/ABI of an ELF header.
  */
 void print_osabi(unsigned char *e_ident)
 {
 	printf("  OS/ABI:                            ");
 
-	switch (e_ident[EI_OSABI])
-	{
-	case ELFOSABI_NONE:
+	if (e_ident[EI_OSABI] == ELFOSABI_NONE)
 		printf("UNIX - System V\n");
-		break;
-	case ELFOSABI_HPUX:
+	else if (e_ident[EI_OSABI] == ELFOSABI_HPUX)
 		printf("UNIX - HP-UX\n");
-		break;
-	case ELFOSABI_NETBSD:
+	else if (e_ident[EI_OSABI] == ELFOSABI_NETBSD)
 		printf("UNIX - NetBSD\n");
-		break;
-	case ELFOSABI_LINUX:
+	else if (e_ident[EI_OSABI] == ELFOSABI_LINUX)
 		printf("UNIX - Linux\n");
-		break;
-	case ELFOSABI_SOLARIS:
+	else if (e_ident[EI_OSABI] == ELFOSABI_SOLARIS)
 		printf("UNIX - Solaris\n");
-		break;
-	case ELFOSABI_IRIX:
+	else if (e_ident[EI_OSABI] == ELFOSABI_IRIX)
 		printf("UNIX - IRIX\n");
-		break;
-	case ELFOSABI_FREEBSD:
+	else if (e_ident[EI_OSABI] == ELFOSABI_FREEBSD)
 		printf("UNIX - FreeBSD\n");
-		break;
-	case ELFOSABI_TRU64:
+	else if (e_ident[EI_OSABI] == ELFOSABI_TRU64)
 		printf("UNIX - TRU64\n");
-		break;
-	case ELFOSABI_ARM:
+	else if (e_ident[EI_OSABI] == ELFOSABI_ARM)
 		printf("ARM\n");
-		break;
-	case ELFOSABI_STANDALONE:
+	else if (e_ident[EI_OSABI] == ELFOSABI_STANDALONE)
 		printf("Standalone App\n");
-		break;
-	default:
+	else
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
-	}
 }
 
 /**
