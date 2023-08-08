@@ -13,43 +13,43 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int file, str_length;
-	ssize_t file_write;
+int file, str_length;
+ssize_t file_write;
 
-	if (!filename)
-  {
-    return (-1);
-  }
+if (!filename)
+{
+return (-1);
+}
 
-	file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
+file = open(filename, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR);
 
-	if (file == -1)
-  {
-    return (-1);
-  }
+if (file == -1)
+{
+return (-1);
+}
 
-	if (!text_content)
-	{
-		close(file);
-		return (1);
-	}
+if (!text_content)
+{
+close(file);
+return (1);
+}
 
-  str_length = 0;
-  while (text_content[str_length] != '\0')
-  {
-    str_length++;
-  }
+str_length = 0;
+while (text_content[str_length] != '\0')
+{
+str_length++;
+}
 
-	file_write = write(file, text_content, str_length);
+file_write = write(file, text_content, str_length);
 
-	if (file_write == -1)
-	{
-		close(file);
-		return (-1);
-	}
-  else
-  {
-    close(file);
-    return (1);
-  }
+if (file_write == -1)
+{
+close(file);
+return (-1);
+}
+else
+{
+close(file);
+return (1);
+}
 }
