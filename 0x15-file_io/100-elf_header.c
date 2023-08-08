@@ -110,12 +110,12 @@ void print_data(unsigned char *e_ident)
  */
 void print_version(unsigned char *e_ident)
 {
-	printf("  Version:                           %d",
-	       e_ident[EI_VERSION]);
-	if (e_ident[EI_VERSION] == EV_CURRENT)
-		printf(" (current)\n");
-	 else
-		printf("\n");
+printf("  Version:                           %d",
+e_ident[EI_VERSION]);
+if (e_ident[EI_VERSION] == EV_CURRENT)
+printf(" (current)\n");
+else
+printf("\n");
 }
 /**
  * print_osabi - Prints the OS/ABI of an ELF header.
