@@ -61,7 +61,7 @@ void print_magic(unsigned char *e_ident)
 			printf("\n");
 		else
 			printf(" ");
-    i++;
+    		i++;
 	}
 }
 
