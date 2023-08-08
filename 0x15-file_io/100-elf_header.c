@@ -222,7 +222,7 @@ char ptr[27];
 
 if (argc != 2)
 {
-printf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
+dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
 exit(98);
 }
 
