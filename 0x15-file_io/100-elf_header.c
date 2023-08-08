@@ -66,27 +66,22 @@ i++;
 }
 
 /**
- * print_class - Prints the class of an ELF header.
+ * print_class - function that prints the class of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
+ * void: prints the class of an ELF header.
  */
 void print_class(unsigned char *e_ident)
 {
 	printf("  Class:                             ");
 
-	switch (e_ident[EI_CLASS])
-	{
-	case ELFCLASSNONE:
+	if (e_ident[EI_CLASS] == ELFCLASSNONE)
 		printf("none\n");
-		break;
-	case ELFCLASS32:
+	else if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("ELF32\n");
-		break;
-	case ELFCLASS64:
+	else if (e_ident[EI_CLASS] == ELFCLASS64)
 		printf("ELF64\n");
-		break;
-	default:
+	else
 		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
-	}
 }
 
 /**
