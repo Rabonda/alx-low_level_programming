@@ -151,8 +151,9 @@ void print_osabi(unsigned char *e_ident)
 }
 
 /**
- * print_abi - Prints the ABI version of an ELF header.
- * @e_ident: A pointer to an array containing the ELF ABI version.
+ * print_abi - function that prints the ABI version of an ELF header.
+ * @e_ident: A pointer to an array.
+ * void: prints the ABI version of an ELF header.
  */
 void print_abi(unsigned char *e_ident)
 {
@@ -161,9 +162,10 @@ void print_abi(unsigned char *e_ident)
 }
 
 /**
- * print_type - Prints the type of an ELF header.
- * @e_type: The ELF type.
- * @e_ident: A pointer to an array containing the ELF class.
+ * print_type - function that prints the type of an ELF header.
+ * @e_type: ELF.
+ * @e_ident: A pointer to an array.
+ * void: prints the type of an ELF header.
  */
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
@@ -171,27 +173,18 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 		e_type >>= 8;
 
 	printf("  Type:                              ");
-
-	switch (e_type)
-	{
-	case ET_NONE:
+	if (e_type == ET_NONE)
 		printf("NONE (None)\n");
-		break;
-	case ET_REL:
+	else if (e_type == ET_REL)
 		printf("REL (Relocatable file)\n");
-		break;
-	case ET_EXEC:
+	else if (e_type == ET_EXEC)
 		printf("EXEC (Executable file)\n");
-		break;
-	case ET_DYN:
+	else if (e_type == ET_DYN)
 		printf("DYN (Shared object file)\n");
-		break;
-	case ET_CORE:
+	else if (e_type == ET_CORE)
 		printf("CORE (Core file)\n");
-		break;
-	default:
+	else
 		printf("<unknown: %x>\n", e_type);
-	}
 }
 
 /**
