@@ -244,7 +244,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
-	header = malloc(sizeof(Elf64_Ehdr));
+	header_file = malloc(sizeof(Elf64_Ehdr));
 	if (header_file == NULL)
 	{
 		close_elf(file);
