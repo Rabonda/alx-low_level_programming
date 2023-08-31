@@ -11,22 +11,22 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int v;
+unsigned int v;
 
-	if (!b)
-		return (0);
-  else
-  {
-    v = 0;
-  	while (*b != '\0')
-  	{
-  		v = v << 1;
-  		if (*b != '1' && *b != '0')
-  			return (0);
-  		else if (*b == '1')
-  			v = v | 1;
-      b += 1;
-  	}
-  }
-	return (v);
+if (!b)
+return (0);
+else
+{
+v = 0;
+while (*b != '\0')
+{
+v = v << 1;
+if (*b != '1' && *b != '0')
+return (0);
+else if (*b == '1')
+v = v | 1;
+b += 1;
+}
+}
+return (v);
 }
