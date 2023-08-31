@@ -56,7 +56,7 @@ Write a function that prints the binary representation of a number.
 - You are not allowed to use malloc
 - You are not allowed to use the % or / operators
 
-'''
+```
 julien@ubuntu:~/0x14. Binary$ cat 1-main.c 
 #include <stdio.h>
 #include "main.h"
@@ -111,4 +111,4 @@ julien@ubuntu:~/0x14. Binary$ ./b
 10000000000
 10000000001
 julien@ubuntu:~/0x14. Binary$ 
-'''
+```
