@@ -13,7 +13,7 @@ char * big_endian = (char *)&little_endian;
 
 if (*big_endian)
 return (1);
-else
+
 return (0);
 
 }
