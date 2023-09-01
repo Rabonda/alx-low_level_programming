@@ -8,12 +8,12 @@
 
 int get_endianness(void)
 {
-	unsigned int  little_endian = 1;
-	char * big_endian = (char *)&little_endian;
+unsigned int  little_endian = 1;
+char * big_endian = (char *)&little_endian;
 
-	if (*big_endian)
-		return (1);
-  else
-    return (0);
+if (*big_endian)
+return (1);
+else
+return (0);
 
 }
