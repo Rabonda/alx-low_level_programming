@@ -13,6 +13,7 @@ int get_endianness(void)
 
 	if (*big_endian)
 		return (1);
-	return (0);
+	else
+		return (0);
 
 }
