@@ -31,7 +31,7 @@ str_length = 0;
 while (text_content[str_length] != '\0')
 str_length++;
 
-file_write = write(file, text_content, str_length);
+file_write = write(f, text_content, str_length);
 
 if (file_write == -1)
 {
