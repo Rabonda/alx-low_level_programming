@@ -14,7 +14,6 @@ Write a function that converts a binary number to an unsigned int.
 julien@ubuntu:~/0x14. Binary$ cat 0-main.c
 #include <stdio.h>
 #include "main.h"
-
 /**
  * main - check the code
  *
