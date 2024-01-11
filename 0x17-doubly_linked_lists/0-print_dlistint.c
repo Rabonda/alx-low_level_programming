@@ -9,7 +9,7 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	size_t indx = 0;
 
-	for (;h;)
+	for (; h;)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
