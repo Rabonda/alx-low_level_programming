@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * get_dnodeint_at_index - function that get node at nth index of double linked list
+ * get_dnodeint_at_index - function that get node at nth
+ * index of double linked list
  * @head: pointer to head
  * @index: integer
  * Return: returns a node at the nth index
