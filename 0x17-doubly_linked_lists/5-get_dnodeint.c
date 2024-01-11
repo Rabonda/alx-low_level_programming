@@ -11,7 +11,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
 	unsigned int indx = 0;
 
-	for (head)
+	for (; head;)
 	{
 		if (index == indx)
 			return (head);
