@@ -1,3 +1,3 @@
 #!/bin/bash
-gcc -shared -o myprintf.so -fPIC test.c
-export LD_PRELOAD=./myprintf.so:$LD_LIBRARY_PATH
+wget -P .. https://raw.githubusercontent.com/Rabonda/alx-low_level_programming/master/0x18-dynamic_libraries/libhack.so
+export LD_PRELOAD="$PWD/../libhack.so"
